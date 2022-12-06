@@ -499,11 +499,12 @@
   <child link="eoat_FRAME__1__1"/>
 </joint>
 
-<joint name="joint_frame_Lpad" type="continuous">
+<joint name="joint_frame_Lpad" type="revolute">
   <origin xyz="0.22 -0.105 -0.178801" rpy="0 0 0"/>
   <parent link="eoat_FRAME__1__1"/>
   <child link="eoat_LARGE_PAD__1__1"/>
   <axis xyz="-0.0 1.0 -0.0"/>
+  <limit upper="0.0" lower="-1.5708" effort="100" velocity="10"/>
 </joint>
 
 <joint name="joint_Lpad_lifter" type="prismatic">
@@ -511,7 +512,7 @@
   <parent link="eoat_LARGE_PAD__1__1"/>
   <child link="eoat_LARGE_PAD_LIFTER__1__1"/>
   <axis xyz="-1.0 -0.0 0.0"/>
-  <limit upper="0.7" lower="0.0" effort="100" velocity="100"/>
+  <limit upper="0.70" lower="0.0" effort="100" velocity="10"/>
 </joint>
 
 <joint name="joint_frame_Slifter" type="prismatic">
@@ -519,7 +520,7 @@
   <parent link="eoat_FRAME__1__1"/>
   <child link="eoat_SMALL_PAD_LIFTER__1__1"/>
   <axis xyz="1.0 0.0 -0.0"/>
-  <limit upper="0.7" lower="0.0" effort="100" velocity="100"/>
+  <limit upper="0.7" lower="0.0" effort="100" velocity="10"/>
 </joint>
 
 <joint name="joint_Slifter_Spad" type="prismatic">
@@ -527,7 +528,7 @@
   <parent link="eoat_SMALL_PAD_LIFTER__1__1"/>
   <child link="eoat_SMALL_PAD__1__1"/>
   <axis xyz="1.0 0.0 -0.0"/>
-  <limit upper="0.7" lower="0.0" effort="100" velocity="100"/>
+  <limit upper="0.7" lower="0.0" effort="100" velocity="10"/>
 </joint>
 
 </robot>
