@@ -1,4 +1,5 @@
 <launch>
+  <rosparam file="$(find mirabb_description)/config/gazebo_ros_control_params.yaml" command="load"/>
   <param name="robot_description" command="$(find xacro)/xacro $(find mirabb_description)/urdf/mirabb.xacro"/>
   <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model mirabb"/>
   <include file="$(find gazebo_ros)/launch/empty_world.launch">

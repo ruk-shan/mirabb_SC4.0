@@ -451,46 +451,52 @@
   <child link="abb_link0__1___1__1"/>
 </joint>
 
-<joint name="joint_link0_link1" type="continuous">
+<joint name="joint_link0_link1" type="revolute">
   <origin xyz="0.0 0.0 0.1535" rpy="0 0 0"/>
   <parent link="abb_link0__1___1__1"/>
   <child link="abb_link1__1___1__1"/>
   <axis xyz="0.0 0.0 1.0"/>
+  <limit upper="1.5708" lower="-1.5708" effort="100" velocity="10"/>
 </joint>
 
-<joint name="joint_link1_link2" type="continuous">
+<joint name="joint_link1_link2" type="revolute">
   <origin xyz="0.175 -0.1225 0.3355" rpy="0 0 0"/>
   <parent link="abb_link1__1___1__1"/>
   <child link="abb_link2__1___1__1"/>
   <axis xyz="0.0 -1.0 0.0"/>
+  <limit upper="1.5708" lower="-1.5708" effort="100" velocity="10"/>
 </joint>
 
-<joint name="joint_link2_link3" type="continuous">
+<joint name="joint_link2_link3" type="revolute">
   <origin xyz="0.0 -0.0267 0.9" rpy="0 0 0"/>
   <parent link="abb_link2__1___1__1"/>
   <child link="abb_link3__1___1__1"/>
   <axis xyz="-0.0 1.0 -0.0"/>
+  <limit upper="1.5708" lower="-1.5708" effort="100" velocity="10"/>
 </joint>
 
-<joint name="joint_link3_link4" type="continuous">
+<joint name="joint_link3_link4" type="revolute">
   <origin xyz="0.3401 0.1492 0.175" rpy="0 0 0"/>
   <parent link="abb_link3__1___1__1"/>
   <child link="abb_link4__1___1__1"/>
   <axis xyz="1.0 0.0 -0.0"/>
+  <limit upper="1.5708" lower="-1.5708" effort="100" velocity="10"/>
 </joint>
 
-<joint name="joint_link4_link5" type="continuous">
+<joint name="joint_link4_link5" type="revolute">
   <origin xyz="0.6199 0.064 0.0" rpy="0 0 0"/>
   <parent link="abb_link4__1___1__1"/>
   <child link="abb_link5__1___1__1"/>
   <axis xyz="0.0 -1.0 0.0"/>
+  <limit upper="1.5708" lower="-1.5708" effort="100" velocity="10"/>
 </joint>
 
-<joint name="joint_link5_link6" type="continuous">
+<joint name="joint_link5_link6" type="revolute">
   <origin xyz="0.065 -0.064 0.0" rpy="0 0 0"/>
   <parent link="abb_link5__1___1__1"/>
   <child link="abb_link6__1___1__1"/>
   <axis xyz="1.0 0.0 -0.0"/>
+  <limit upper="1.5708" lower="-1.5708" effort="100" velocity="10"/>
 </joint>
 
 <joint name="joint_link6_frame" type="fixed">

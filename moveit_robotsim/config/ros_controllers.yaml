@@ -1,0 +1,74 @@
+arm_group_controller:
+  type: effort_controllers/JointTrajectoryController
+  joints:
+    - joint_link0_link1
+    - joint_link1_link2
+    - joint_link2_link3
+    - joint_link3_link4
+    - joint_link4_link5
+    - joint_link5_link6
+  gains:
+    joint_link0_link1:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    joint_link1_link2:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    joint_link2_link3:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    joint_link3_link4:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    joint_link4_link5:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    joint_link5_link6:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+eoat_controller:
+  type: effort_controllers/JointTrajectoryController
+  joints:
+    - joint_frame_Lpad
+    - joint_Lpad_lifter
+    - joint_frame_Slifter
+    - joint_Slifter_Spad
+  gains:
+    joint_frame_Lpad:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    joint_Lpad_lifter:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    joint_frame_Slifter:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    joint_Slifter_Spad:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+abbrobot_conytoller:
+  type: position_controllers/JointTrajectoryController
+  joints:
+    []
+  gains:
+    {}

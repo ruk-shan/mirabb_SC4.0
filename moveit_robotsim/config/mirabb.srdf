@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This does not replace URDF, and is not an extension of URDF.
+    This is a format for representing semantic information about the robot structure.
+    A URDF file must exist for this robot as well, where the joints and the links that are referenced are defined
+-->
+<robot name="mirabb">
+    <!--GROUPS: Representation of a set of joints and links. This can be useful for specifying DOF to plan for, defining arms, end effectors, etc-->
+    <!--LINKS: When a link is specified, the parent joint of that link (if it exists) is automatically included-->
+    <!--JOINTS: When a joint is specified, the child link of that joint (which will always exist) is automatically included-->
+    <!--CHAINS: When a chain is specified, all the links along the chain (including endpoints) are included in the group. Additionally, all the joints that are parents to included links are also included. This means that joints along the chain and the parent joint of the base link are included in the group-->
+    <!--SUBGROUPS: Groups can also be formed by referencing to already defined group names-->
+    <group name="arm_group">
+        <joint name="joint_link0_link1"/>
+        <joint name="joint_link1_link2"/>
+        <joint name="joint_link2_link3"/>
+        <joint name="joint_link3_link4"/>
+        <joint name="joint_link4_link5"/>
+        <joint name="joint_link5_link6"/>
+    </group>
+    <group name="eoat">
+        <joint name="joint_frame_Lpad"/>
+        <joint name="joint_Lpad_lifter"/>
+        <joint name="joint_frame_Slifter"/>
+        <joint name="joint_Slifter_Spad"/>
+    </group>
+    <!--GROUP STATES: Purpose: Define a named state for a particular group, in terms of joint values. This is useful to define states like 'folded arms'-->
+    <group_state name="home" group="arm_group">
+        <joint name="joint_link0_link1" value="0"/>
+        <joint name="joint_link1_link2" value="0"/>
+        <joint name="joint_link2_link3" value="0"/>
+        <joint name="joint_link3_link4" value="0"/>
+        <joint name="joint_link4_link5" value="0"/>
+        <joint name="joint_link5_link6" value="0"/>
+    </group_state>
+    <group_state name="pose1" group="arm_group">
+        <joint name="joint_link0_link1" value="0.5294"/>
+        <joint name="joint_link1_link2" value="0.4947"/>
+        <joint name="joint_link2_link3" value="0.3732"/>
+        <joint name="joint_link3_link4" value="0.9633"/>
+        <joint name="joint_link4_link5" value="0.5467"/>
+        <joint name="joint_link5_link6" value="0.5815"/>
+    </group_state>
+    <group_state name="pose2" group="eoat">
+        <joint name="joint_Lpad_lifter" value="0.0619"/>
+        <joint name="joint_Slifter_Spad" value="0.0735"/>
+        <joint name="joint_frame_Lpad" value="-1.5708"/>
+        <joint name="joint_frame_Slifter" value="0.1199"/>
+    </group_state>
+    <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
+    <end_effector name="hand_eoat" parent_link="abb_link6__1___1__1" group="arm_group"/>
+    <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
+    <disable_collisions link1="abb_link0__1___1__1" link2="abb_link1__1___1__1" reason="Adjacent"/>
+    <disable_collisions link1="abb_link0__1___1__1" link2="abb_link2__1___1__1" reason="Never"/>
+    <disable_collisions link1="abb_link0__1___1__1" link2="abb_link3__1___1__1" reason="Never"/>
+    <disable_collisions link1="abb_link0__1___1__1" link2="base_link" reason="Adjacent"/>
+    <disable_collisions link1="abb_link0__1___1__1" link2="mir_front_left_caster_1" reason="Never"/>
+    <disable_collisions link1="abb_link0__1___1__1" link2="mir_front_right_caster_1" reason="Never"/>
+    <disable_collisions link1="abb_link0__1___1__1" link2="mir_left_drive_wheel_1" reason="Never"/>
+    <disable_collisions link1="abb_link0__1___1__1" link2="mir_rear_left_caster_1" reason="Never"/>
+    <disable_collisions link1="abb_link0__1___1__1" link2="mir_rear_right_caster_1" reason="Never"/>
+    <disable_collisions link1="abb_link0__1___1__1" link2="mir_right_drive_wheel_1" reason="Never"/>
+    <disable_collisions link1="abb_link1__1___1__1" link2="abb_link2__1___1__1" reason="Adjacent"/>
+    <disable_collisions link1="abb_link1__1___1__1" link2="abb_link3__1___1__1" reason="Never"/>
+    <disable_collisions link1="abb_link1__1___1__1" link2="base_link" reason="Never"/>
+    <disable_collisions link1="abb_link1__1___1__1" link2="mir_front_left_caster_1" reason="Never"/>
+    <disable_collisions link1="abb_link1__1___1__1" link2="mir_front_right_caster_1" reason="Never"/>
+    <disable_collisions link1="abb_link1__1___1__1" link2="mir_left_drive_wheel_1" reason="Never"/>
+    <disable_collisions link1="abb_link1__1___1__1" link2="mir_rear_left_caster_1" reason="Never"/>
+    <disable_collisions link1="abb_link1__1___1__1" link2="mir_rear_right_caster_1" reason="Never"/>
+    <disable_collisions link1="abb_link1__1___1__1" link2="mir_right_drive_wheel_1" reason="Never"/>
+    <disable_collisions link1="abb_link2__1___1__1" link2="abb_link3__1___1__1" reason="Adjacent"/>
+    <disable_collisions link1="abb_link2__1___1__1" link2="abb_link5__1___1__1" reason="Never"/>
+    <disable_collisions link1="abb_link2__1___1__1" link2="mir_front_left_caster_1" reason="Never"/>
+    <disable_collisions link1="abb_link2__1___1__1" link2="mir_front_right_caster_1" reason="Never"/>
+    <disable_collisions link1="abb_link2__1___1__1" link2="mir_left_drive_wheel_1" reason="Never"/>
+    <disable_collisions link1="abb_link2__1___1__1" link2="mir_rear_left_caster_1" reason="Never"/>
+    <disable_collisions link1="abb_link2__1___1__1" link2="mir_rear_right_caster_1" reason="Never"/>
+    <disable_collisions link1="abb_link2__1___1__1" link2="mir_right_drive_wheel_1" reason="Never"/>
+    <disable_collisions link1="abb_link3__1___1__1" link2="abb_link4__1___1__1" reason="Adjacent"/>
+    <disable_collisions link1="abb_link3__1___1__1" link2="abb_link5__1___1__1" reason="Never"/>
+    <disable_collisions link1="abb_link3__1___1__1" link2="abb_link6__1___1__1" reason="Never"/>
+    <disable_collisions link1="abb_link3__1___1__1" link2="eoat_FRAME__1__1" reason="Never"/>
+    <disable_collisions link1="abb_link3__1___1__1" link2="eoat_LARGE_PAD__1__1" reason="Never"/>
+    <disable_collisions link1="abb_link3__1___1__1" link2="eoat_SMALL_PAD_LIFTER__1__1" reason="Never"/>
+    <disable_collisions link1="abb_link3__1___1__1" link2="eoat_SMALL_PAD__1__1" reason="Never"/>
+    <disable_collisions link1="abb_link3__1___1__1" link2="mir_front_left_caster_1" reason="Never"/>
+    <disable_collisions link1="abb_link3__1___1__1" link2="mir_front_right_caster_1" reason="Never"/>
+    <disable_collisions link1="abb_link3__1___1__1" link2="mir_left_drive_wheel_1" reason="Never"/>
+    <disable_collisions link1="abb_link3__1___1__1" link2="mir_rear_left_caster_1" reason="Never"/>
+    <disable_collisions link1="abb_link3__1___1__1" link2="mir_rear_right_caster_1" reason="Never"/>
+    <disable_collisions link1="abb_link3__1___1__1" link2="mir_right_drive_wheel_1" reason="Never"/>
+    <disable_collisions link1="abb_link4__1___1__1" link2="abb_link5__1___1__1" reason="Adjacent"/>
+    <disable_collisions link1="abb_link4__1___1__1" link2="abb_link6__1___1__1" reason="Never"/>
+    <disable_collisions link1="abb_link4__1___1__1" link2="eoat_FRAME__1__1" reason="Never"/>
+    <disable_collisions link1="abb_link4__1___1__1" link2="eoat_LARGE_PAD__1__1" reason="Never"/>
+    <disable_collisions link1="abb_link4__1___1__1" link2="eoat_SMALL_PAD_LIFTER__1__1" reason="Never"/>
+    <disable_collisions link1="abb_link4__1___1__1" link2="eoat_SMALL_PAD__1__1" reason="Never"/>
+    <disable_collisions link1="abb_link4__1___1__1" link2="mir_left_drive_wheel_1" reason="Never"/>
+    <disable_collisions link1="abb_link4__1___1__1" link2="mir_rear_left_caster_1" reason="Never"/>
+    <disable_collisions link1="abb_link4__1___1__1" link2="mir_rear_right_caster_1" reason="Never"/>
+    <disable_collisions link1="abb_link4__1___1__1" link2="mir_right_drive_wheel_1" reason="Never"/>
+    <disable_collisions link1="abb_link5__1___1__1" link2="abb_link6__1___1__1" reason="Adjacent"/>
+    <disable_collisions link1="abb_link5__1___1__1" link2="eoat_FRAME__1__1" reason="Never"/>
+    <disable_collisions link1="abb_link5__1___1__1" link2="eoat_LARGE_PAD_LIFTER__1__1" reason="Never"/>
+    <disable_collisions link1="abb_link5__1___1__1" link2="eoat_LARGE_PAD__1__1" reason="Never"/>
+    <disable_collisions link1="abb_link5__1___1__1" link2="eoat_SMALL_PAD_LIFTER__1__1" reason="Never"/>
+    <disable_collisions link1="abb_link5__1___1__1" link2="eoat_SMALL_PAD__1__1" reason="Never"/>
+    <disable_collisions link1="abb_link5__1___1__1" link2="mir_left_drive_wheel_1" reason="Never"/>
+    <disable_collisions link1="abb_link5__1___1__1" link2="mir_rear_left_caster_1" reason="Never"/>
+    <disable_collisions link1="abb_link5__1___1__1" link2="mir_rear_right_caster_1" reason="Never"/>
+    <disable_collisions link1="abb_link5__1___1__1" link2="mir_right_drive_wheel_1" reason="Never"/>
+    <disable_collisions link1="abb_link6__1___1__1" link2="eoat_FRAME__1__1" reason="Adjacent"/>
+    <disable_collisions link1="abb_link6__1___1__1" link2="eoat_LARGE_PAD_LIFTER__1__1" reason="Never"/>
+    <disable_collisions link1="abb_link6__1___1__1" link2="eoat_LARGE_PAD__1__1" reason="Never"/>
+    <disable_collisions link1="abb_link6__1___1__1" link2="eoat_SMALL_PAD_LIFTER__1__1" reason="Never"/>
+    <disable_collisions link1="abb_link6__1___1__1" link2="eoat_SMALL_PAD__1__1" reason="Never"/>
+    <disable_collisions link1="abb_link6__1___1__1" link2="mir_left_drive_wheel_1" reason="Never"/>
+    <disable_collisions link1="abb_link6__1___1__1" link2="mir_rear_left_caster_1" reason="Never"/>
+    <disable_collisions link1="abb_link6__1___1__1" link2="mir_rear_right_caster_1" reason="Never"/>
+    <disable_collisions link1="abb_link6__1___1__1" link2="mir_right_drive_wheel_1" reason="Never"/>
+    <disable_collisions link1="base_link" link2="mir_front_left_caster_1" reason="Adjacent"/>
+    <disable_collisions link1="base_link" link2="mir_front_right_caster_1" reason="Adjacent"/>
+    <disable_collisions link1="base_link" link2="mir_left_drive_wheel_1" reason="Adjacent"/>
+    <disable_collisions link1="base_link" link2="mir_rear_left_caster_1" reason="Adjacent"/>
+    <disable_collisions link1="base_link" link2="mir_rear_right_caster_1" reason="Adjacent"/>
+    <disable_collisions link1="base_link" link2="mir_right_drive_wheel_1" reason="Adjacent"/>
+    <disable_collisions link1="eoat_FRAME__1__1" link2="eoat_LARGE_PAD__1__1" reason="Adjacent"/>
+    <disable_collisions link1="eoat_FRAME__1__1" link2="eoat_SMALL_PAD_LIFTER__1__1" reason="Adjacent"/>
+    <disable_collisions link1="eoat_FRAME__1__1" link2="eoat_SMALL_PAD__1__1" reason="Default"/>
+    <disable_collisions link1="eoat_FRAME__1__1" link2="mir_rear_left_caster_1" reason="Never"/>
+    <disable_collisions link1="eoat_FRAME__1__1" link2="mir_rear_right_caster_1" reason="Never"/>
+    <disable_collisions link1="eoat_LARGE_PAD_LIFTER__1__1" link2="eoat_LARGE_PAD__1__1" reason="Adjacent"/>
+    <disable_collisions link1="eoat_LARGE_PAD_LIFTER__1__1" link2="eoat_SMALL_PAD_LIFTER__1__1" reason="Never"/>
+    <disable_collisions link1="eoat_LARGE_PAD_LIFTER__1__1" link2="eoat_SMALL_PAD__1__1" reason="Never"/>
+    <disable_collisions link1="eoat_LARGE_PAD_LIFTER__1__1" link2="mir_rear_left_caster_1" reason="Never"/>
+    <disable_collisions link1="eoat_LARGE_PAD_LIFTER__1__1" link2="mir_rear_right_caster_1" reason="Never"/>
+    <disable_collisions link1="eoat_LARGE_PAD__1__1" link2="eoat_SMALL_PAD_LIFTER__1__1" reason="Never"/>
+    <disable_collisions link1="eoat_LARGE_PAD__1__1" link2="eoat_SMALL_PAD__1__1" reason="Never"/>
+    <disable_collisions link1="eoat_LARGE_PAD__1__1" link2="mir_rear_left_caster_1" reason="Never"/>
+    <disable_collisions link1="eoat_LARGE_PAD__1__1" link2="mir_rear_right_caster_1" reason="Never"/>
+    <disable_collisions link1="eoat_SMALL_PAD_LIFTER__1__1" link2="eoat_SMALL_PAD__1__1" reason="Adjacent"/>
+    <disable_collisions link1="eoat_SMALL_PAD_LIFTER__1__1" link2="mir_rear_left_caster_1" reason="Never"/>
+    <disable_collisions link1="eoat_SMALL_PAD_LIFTER__1__1" link2="mir_rear_right_caster_1" reason="Never"/>
+    <disable_collisions link1="eoat_SMALL_PAD__1__1" link2="mir_rear_left_caster_1" reason="Never"/>
+    <disable_collisions link1="mir_front_left_caster_1" link2="mir_front_right_caster_1" reason="Never"/>
+    <disable_collisions link1="mir_front_left_caster_1" link2="mir_left_drive_wheel_1" reason="Never"/>
+    <disable_collisions link1="mir_front_left_caster_1" link2="mir_rear_left_caster_1" reason="Never"/>
+    <disable_collisions link1="mir_front_left_caster_1" link2="mir_rear_right_caster_1" reason="Never"/>
+    <disable_collisions link1="mir_front_left_caster_1" link2="mir_right_drive_wheel_1" reason="Never"/>
+    <disable_collisions link1="mir_front_right_caster_1" link2="mir_left_drive_wheel_1" reason="Never"/>
+    <disable_collisions link1="mir_front_right_caster_1" link2="mir_rear_left_caster_1" reason="Never"/>
+    <disable_collisions link1="mir_front_right_caster_1" link2="mir_rear_right_caster_1" reason="Never"/>
+    <disable_collisions link1="mir_front_right_caster_1" link2="mir_right_drive_wheel_1" reason="Never"/>
+    <disable_collisions link1="mir_left_drive_wheel_1" link2="mir_rear_left_caster_1" reason="Never"/>
+    <disable_collisions link1="mir_left_drive_wheel_1" link2="mir_rear_right_caster_1" reason="Never"/>
+    <disable_collisions link1="mir_left_drive_wheel_1" link2="mir_right_drive_wheel_1" reason="Never"/>
+    <disable_collisions link1="mir_rear_left_caster_1" link2="mir_rear_right_caster_1" reason="Never"/>
+    <disable_collisions link1="mir_rear_left_caster_1" link2="mir_right_drive_wheel_1" reason="Never"/>
+    <disable_collisions link1="mir_rear_right_caster_1" link2="mir_right_drive_wheel_1" reason="Never"/>
+</robot>
