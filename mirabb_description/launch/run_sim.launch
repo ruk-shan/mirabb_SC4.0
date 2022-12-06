@@ -1,0 +1,34 @@
+<launch>
+
+    <!--rviz-->
+  <arg name="model" default="$(find mirabb_description)/urdf/mirabb.xacro"/>
+  <arg name="gui" default="true"/>
+  <arg name="rvizconfig" default="$(find mirabb_description)/launch/urdf.rviz"/>
+  <param name="robot_description" command="$(find xacro)/xacro $(arg model)"/>
+  <param name="use_gui" value="$(arg gui)"/>
+  <!-- <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/> -->
+  <!-- <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/> -->
+  <node name="rviz" pkg="rviz" args="-d $(arg rvizconfig)" type="rviz" required="true"/>
+
+
+    <!-- gazebo -->
+    <rosparam file="$(find mirabb_description)/config/gazebo_ros_control_params.yaml" command="load"/>
+    <param name="robot_description" command="$(find xacro)/xacro $(find mirabb_description)/urdf/mirabb.xacro"/>
+    <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model mirabb"/>
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="paused" value="true"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="headless" value="false"/>
+    <arg name="debug" value="false"/>
+    </include>
+
+    <!-- controller -->
+    <rosparam file="$(find mirabb_description)/config/joint_trajectory_controller.yaml" command="load"/>
+    <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="mirabb" args="joint_Base_LeftWheel_position_controller joint_Base_RightWheel_position_controller joint_Base_rear_right_caster_position_controller joint_Base_rear_left_caster_position_controller joint_Base_front_right_caster_position_controller joint_Base_front_left_caster_position_controller joint_link0_link1_position_controller joint_link1_link2_position_controller joint_link2_link3_position_controller joint_link3_link4_position_controller joint_link4_link5_position_controller joint_link5_link6_position_controller joint_frame_Lpad_position_controller joint_Lpad_lifter_position_controller joint_frame_Slifter_position_controller joint_Slifter_Spad_position_controller joint_state_controller "/>
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
+    <remap from="/joint_states" to="/mirabb/joint_states"/>
+    </node>
+
+
+</launch>
