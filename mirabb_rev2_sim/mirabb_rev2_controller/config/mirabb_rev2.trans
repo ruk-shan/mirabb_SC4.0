@@ -1,0 +1,137 @@
+<?xml version="1.0" ?>
+<robot name="mirabb_rev2" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+<!-- <transmission name="joint_abb_1_to_abb_0_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="joint_abb_1_to_abb_0">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="joint_abb_1_to_abb_0_actr">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+ 
+<transmission name="joint_abb_2_to_abb_1_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="joint_abb_2_to_abb_1">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="joint_abb_2_to_abb_1_actr">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="joint_abb_3_to_abb_2_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="joint_abb_3_to_abb_2">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="joint_abb_3_to_abb_2_actr">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="joint_abb_4_to_abb_3_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="joint_abb_4_to_abb_3">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="joint_abb_4_to_abb_3_actr">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="joint_abb_5_to_abb_4_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="joint_abb_5_to_abb_4">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="joint_abb_5_to_abb_4_actr">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="joint_abb_6_to_abb_5_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="joint_abb_6_to_abb_5">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="joint_abb_6_to_abb_5_actr">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission> -->
+
+
+<transmission name="joint_abb_1_to_abb_0_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="joint_abb_1_to_abb_0">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="joint_abb_1_to_abb_0_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+ 
+<transmission name="joint_abb_2_to_abb_1_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="joint_abb_2_to_abb_1">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="joint_abb_2_to_abb_1_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="joint_abb_3_to_abb_2_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="joint_abb_3_to_abb_2">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="joint_abb_3_to_abb_2_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="joint_abb_4_to_abb_3_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="joint_abb_4_to_abb_3">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="joint_abb_4_to_abb_3_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="joint_abb_5_to_abb_4_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="joint_abb_5_to_abb_4">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="joint_abb_5_to_abb_4_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="joint_abb_6_to_abb_5_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="joint_abb_6_to_abb_5">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="joint_abb_6_to_abb_5_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+</robot>

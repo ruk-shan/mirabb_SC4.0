@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<launch>
+
+    <include file="$(find mirabb_description)/launch/gazebo.launch" />
+    <include file="$(find mirabb_description)/launch/controller.launch" />
+    <include file="$(find mirabb_description)/launch/display.launch" />
+    <!-- <include file="$(find mirabb_moveit_config)/launch/demo.launch" />   -->
+
+</launch>    
+

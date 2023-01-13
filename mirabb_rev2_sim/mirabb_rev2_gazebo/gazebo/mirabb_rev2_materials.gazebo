@@ -1,0 +1,86 @@
+<?xml version="1.0" ?>
+<robot name="mirabb_rev2" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+<xacro:property name="body_color" value="Gazebo/Grey" />
+<xacro:property name="base_color" value="Gazebo/Grey" />
+<xacro:property name="lidar_color" value="Gazebo/Blue" />
+<xacro:property name="drivewheel_color" value="Gazebo/Green" />
+<xacro:property name="battery_color" value="Gazebo/Grey" />
+<xacro:property name="controller_color" value="Gazebo/Grey" />
+<xacro:property name="robot_color" value="Gazebo/DarkYellow" />
+<xacro:property name="caster_color" value="Gazebo/Yellow" />
+
+
+<gazebo reference="base_link">
+  <material>${base_color}</material>
+</gazebo>
+
+<gazebo reference="battery_pack_1">
+  <material>${battery_color}</material>
+</gazebo>
+
+<gazebo reference="IRC5_1">
+  <material>${controller_color}</material>
+</gazebo>
+
+<gazebo reference="rear_left_caster_1">
+  <material>${caster_color}</material>
+</gazebo>
+
+<gazebo reference="rear_right_caster_1">
+  <material>${caster_color}</material>
+</gazebo>
+
+<gazebo reference="front_right_caster_1">
+  <material>${caster_color}</material>
+</gazebo>
+
+<gazebo reference="front_left_caster_1">
+  <material>${caster_color}</material>
+</gazebo>
+
+<gazebo reference="right_drive_wheel_1">
+  <material>${drivewheel_color}</material>
+</gazebo>
+
+<gazebo reference="left_drive_wheel_1">
+  <material>${drivewheel_color}</material>
+</gazebo>
+
+<gazebo reference="rear_lidar_1">
+  <material>${lidar_color}</material>
+</gazebo>
+
+<gazebo reference="front_lidar_1">
+  <material>${lidar_color}</material>
+</gazebo>
+
+<gazebo reference="abb_link_0_1">
+  <material>${robot_color}</material>
+</gazebo>
+
+<gazebo reference="abb_link_1_1">
+  <material>${robot_color}</material>
+</gazebo>
+
+<gazebo reference="abb_link_2_1">
+  <material>${robot_color}</material>
+</gazebo>
+
+<gazebo reference="abb_link_3_1">
+  <material>${robot_color}</material>
+</gazebo>
+
+<gazebo reference="abb_link_4_1">
+  <material>${robot_color}</material>
+</gazebo>
+
+<gazebo reference="abb_link_5_1">
+  <material>${robot_color}</material>
+</gazebo>
+
+<gazebo reference="abb_link_6_1">
+  <material>${robot_color}</material>
+</gazebo> -->
+
+</robot>

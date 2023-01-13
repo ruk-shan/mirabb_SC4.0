@@ -1,0 +1,9 @@
+<launch>
+
+<rosparam file="$(find mirabb_rev2_controller)/config/controller.yaml" command="load"/>
+<node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="mirabb_rev2" args="joint_right_drive_wheel_to_base_position_controller joint_left_drive_wheel_to_base_position_controller joint_abb_1_to_abb_0_position_controller joint_abb_2_to_abb_1_position_controller joint_abb_3_to_abb_2_position_controller joint_abb_4_to_abb_3_position_controller joint_abb_5_to_abb_4_position_controller joint_abb_6_to_abb_5_position_controller joint_state_controller "/>
+<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
+  <remap from="/joint_states" to="/mirabb_rev2/joint_states"/>
+</node>
+
+</launch>

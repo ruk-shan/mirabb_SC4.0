@@ -4,10 +4,11 @@
 <xacro:include filename="$(find mirabb_description)/urdf/materials.xacro" />
 <xacro:include filename="$(find mirabb_description)/urdf/mirabb.trans" />
 <xacro:include filename="$(find mirabb_description)/urdf/mirabb.gazebo" />
+
 <link name="base_link">
   <inertial>
     <origin xyz="-0.14772812309663302 -0.023206697854912604 0.4203334227386186" rpy="0 0 0"/>
-    <mass value="1373.8024974130929"/>
+    <mass value="1000"/>
     <inertia ixx="199.757361" iyy="263.585665" izz="251.283031" ixy="11.317127" iyz="-1.492251" ixz="56.773936"/>
   </inertial>
   <visual>
@@ -24,6 +25,12 @@
     </geometry>
   </collision>
 </link>
+
+<link name="world"/>
+  <joint name="fixed" type="fixed">
+    <parent link="world"/>
+    <child link="base_link"/>
+  </joint>
 
 <link name="mir_left_drive_wheel_1">
   <inertial>
@@ -151,257 +158,259 @@
   </collision>
 </link>
 
-<link name="abb_link0__1___1__1">
+<link name="link0_1">
   <inertial>
     <origin xyz="-0.09119346561175606 0.0003630237210969841 0.07246431742776649" rpy="0 0 0"/>
-    <mass value="237.71328449728193"/>
+    <mass value="2.37"/>
     <inertia ixx="3.322456" iyy="6.746895" izz="9.112071" ixy="0.030784" iyz="0.001141" ixz="0.455197"/>
   </inertial>
   <visual>
     <origin xyz="-0.357783 0.000662 -0.322346" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://mirabb_description/meshes/abb_link0__1___1__1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://mirabb_description/meshes/link0_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="powder_coat_rough_grey"/>
   </visual>
   <collision>
     <origin xyz="-0.357783 0.000662 -0.322346" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://mirabb_description/meshes/abb_link0__1___1__1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://mirabb_description/meshes/link0_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<link name="abb_link1__1___1__1">
+<link name="link1_1">
   <inertial>
     <origin xyz="0.0770381921903589 0.02468988684405638 0.24069822644139682" rpy="0 0 0"/>
-    <mass value="332.94668738644"/>
+    <mass value="3.32"/>
     <inertia ixx="8.732818" iyy="11.378244" izz="9.105966" ixy="-0.760548" iyz="-0.812185" ixz="-2.349544"/>
   </inertial>
   <visual>
     <origin xyz="-0.357783 0.000662 -0.475846" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://mirabb_description/meshes/abb_link1__1___1__1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://mirabb_description/meshes/link1_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="powder_coat_rough_grey"/>
   </visual>
   <collision>
     <origin xyz="-0.357783 0.000662 -0.475846" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://mirabb_description/meshes/abb_link1__1___1__1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://mirabb_description/meshes/link1_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<link name="abb_link2__1___1__1">
+<link name="link2_1">
   <inertial>
     <origin xyz="8.115108053485809e-05 -0.04807066318993641 0.39677546222613913" rpy="0 0 0"/>
-    <mass value="220.41574953890566"/>
+    <mass value="2.20"/>
     <inertia ixx="17.032393" iyy="17.64881" izz="1.263078" ixy="-0.000226" iyz="0.57807" ixz="0.002216"/>
   </inertial>
   <visual>
     <origin xyz="-0.532783 0.123162 -0.811346" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://mirabb_description/meshes/abb_link2__1___1__1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://mirabb_description/meshes/link2_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="powder_coat_rough_grey"/>
   </visual>
   <collision>
     <origin xyz="-0.532783 0.123162 -0.811346" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://mirabb_description/meshes/abb_link2__1___1__1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://mirabb_description/meshes/link2_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<link name="abb_link3__1___1__1">
+<link name="link3_1">
   <inertial>
     <origin xyz="0.04071241501864575 0.19846588331938803 0.11876174508797432" rpy="0 0 0"/>
-    <mass value="400.49713290828447"/>
+    <mass value="4.00"/>
     <inertia ixx="8.893944" iyy="10.887964" izz="8.946809" ixy="0.577245" iyz="-0.110791" ixz="-0.921475"/>
   </inertial>
   <visual>
     <origin xyz="-0.532783 0.149862 -1.711346" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://mirabb_description/meshes/abb_link3__1___1__1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://mirabb_description/meshes/link3_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="powder_coat_rough_grey"/>
   </visual>
   <collision>
     <origin xyz="-0.532783 0.149862 -1.711346" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://mirabb_description/meshes/abb_link3__1___1__1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://mirabb_description/meshes/link3_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<link name="abb_link4__1___1__1">
+<link name="link4_1">
   <inertial>
     <origin xyz="0.3931328503470747 -0.001975761568746799 -0.002846156235639885" rpy="0 0 0"/>
-    <mass value="87.24410051263763"/>
+    <mass value="0.87"/>
     <inertia ixx="0.41803" iyy="3.624483" izz="3.763004" ixy="0.044332" iyz="0.000227" ixz="0.018011"/>
   </inertial>
   <visual>
     <origin xyz="-0.872883 0.000662 -1.886346" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://mirabb_description/meshes/abb_link4__1___1__1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://mirabb_description/meshes/link4_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="powder_coat_rough_grey"/>
   </visual>
   <collision>
     <origin xyz="-0.872883 0.000662 -1.886346" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://mirabb_description/meshes/abb_link4__1___1__1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://mirabb_description/meshes/link4_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<link name="abb_link5__1___1__1">
+<link name="link5_1">
   <inertial>
     <origin xyz="-0.001050837673909566 -0.06745178444475677 0.000400066383309694" rpy="0 0 0"/>
-    <mass value="11.79629310062911"/>
+    <mass value="0.11"/>
     <inertia ixx="0.023766" iyy="0.024654" izz="0.026173" ixy="-6e-06" iyz="-4e-05" ixz="-0.000134"/>
   </inertial>
   <visual>
     <origin xyz="-1.492783 -0.063338 -1.886346" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://mirabb_description/meshes/abb_link5__1___1__1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://mirabb_description/meshes/link5_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="opaque215215215"/>
   </visual>
   <collision>
     <origin xyz="-1.492783 -0.063338 -1.886346" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://mirabb_description/meshes/abb_link5__1___1__1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://mirabb_description/meshes/link5_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<link name="abb_link6__1___1__1">
+<link name="link6_1">
   <inertial>
     <origin xyz="0.04834495659572857 -0.0002895257483309458 0.00013833881264391223" rpy="0 0 0"/>
-    <mass value="2.088759832475839"/>
+    <mass value="0.2088759832475839"/>
     <inertia ixx="0.002956" iyy="0.002242" izz="0.002257" ixy="6e-06" iyz="-2.1e-05" ixz="-2e-06"/>
   </inertial>
   <visual>
     <origin xyz="-1.557783 0.000662 -1.886346" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://mirabb_description/meshes/abb_link6__1___1__1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://mirabb_description/meshes/link6_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="opaque128128128"/>
   </visual>
   <collision>
     <origin xyz="-1.557783 0.000662 -1.886346" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://mirabb_description/meshes/abb_link6__1___1__1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://mirabb_description/meshes/link6_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<link name="eoat_FRAME__1__1">
+<link name="link7_1">
   <inertial>
     <origin xyz="0.09435402654960545 -0.024443476502948997 -0.1809282457600363" rpy="0 0 0"/>
-    <mass value="18.545525251382905"/>
+    <mass value="0.18"/>
     <inertia ixx="0.453826" iyy="0.490217" izz="0.136509" ixy="-0.000281" iyz="0.009786" ixz="0.036009"/>
   </inertial>
   <visual>
     <origin xyz="-1.627783 -0.024338 -1.929647" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://mirabb_description/meshes/eoat_FRAME__1__1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://mirabb_description/meshes/link7_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="paint_metallic_blue"/>
   </visual>
   <collision>
     <origin xyz="-1.627783 -0.024338 -1.929647" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://mirabb_description/meshes/eoat_FRAME__1__1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://mirabb_description/meshes/link7_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<link name="eoat_LARGE_PAD__1__1">
+<link name="link11_1">
   <inertial>
     <origin xyz="0.004010304521571584 0.07995109560914467 -0.13300869834630413" rpy="0 0 0"/>
-    <mass value="11.366258677174638"/>
+    <mass value="0.11"/>
     <inertia ixx="0.089057" iyy="0.072156" izz="0.030313" ixy="-2.8e-05" iyz="0.0" ixz="0.002048"/>
   </inertial>
   <visual>
     <origin xyz="-1.847783 0.080662 -1.750846" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://mirabb_description/meshes/eoat_LARGE_PAD__1__1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://mirabb_description/meshes/link11_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="paint_metallic_silver"/>
   </visual>
   <collision>
     <origin xyz="-1.847783 0.080662 -1.750846" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://mirabb_description/meshes/eoat_LARGE_PAD__1__1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://mirabb_description/meshes/link11_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<link name="eoat_LARGE_PAD_LIFTER__1__1">
+<link name="link10_1">
   <inertial>
     <origin xyz="0.06094357946520934 3.5250784968430225e-08 -0.022431829490297206" rpy="0 0 0"/>
-    <mass value="2.7783433343628725"/>
+    <mass value="0.27783433343628725"/>
     <inertia ixx="0.022484" iyy="0.019086" izz="0.023473" ixy="0.0" iyz="-0.0" ixz="0.004273"/>
   </inertial>
   <visual>
     <origin xyz="-1.770283 0.000662 -1.633846" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://mirabb_description/meshes/eoat_LARGE_PAD_LIFTER__1__1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://mirabb_description/meshes/link10_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="generic"/>
   </visual>
   <collision>
     <origin xyz="-1.770283 0.000662 -1.633846" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://mirabb_description/meshes/eoat_LARGE_PAD_LIFTER__1__1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://mirabb_description/meshes/link10_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<link name="eoat_SMALL_PAD_LIFTER__1__1">
+<link name="link9_1">
   <inertial>
     <origin xyz="-0.038754353853061474 -0.00041457716043523976 0.037254020568219914" rpy="0 0 0"/>
-    <mass value="5.1319675889827"/>
+    <mass value="0.51319675889827"/>
     <inertia ixx="0.009503" iyy="0.01009" izz="0.01215" ixy="-1.3e-05" iyz="5.5e-05" ixz="0.001465"/>
   </inertial>
   <visual>
     <origin xyz="-1.805783 7.2e-05 -1.830846" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://mirabb_description/meshes/eoat_SMALL_PAD_LIFTER__1__1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://mirabb_description/meshes/link9_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="paint_metallic_red"/>
   </visual>
   <collision>
     <origin xyz="-1.805783 7.2e-05 -1.830846" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://mirabb_description/meshes/eoat_SMALL_PAD_LIFTER__1__1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://mirabb_description/meshes/link9_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<link name="eoat_SMALL_PAD__1__1">
+<link name="link8_1">
   <inertial>
     <origin xyz="0.025113317898471932 2.9552189966326162e-05 -0.0002673043609695558" rpy="0 0 0"/>
-    <mass value="7.679302710691369"/>
+    <mass value="0.70679302710691369"/>
     <inertia ixx="0.037858" iyy="0.021317" izz="0.028823" ixy="2e-06" iyz="-1e-05" ixz="-2.1e-05"/>
   </inertial>
   <visual>
     <origin xyz="-1.803783 0.000662 -1.888846" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://mirabb_description/meshes/eoat_SMALL_PAD__1__1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://mirabb_description/meshes/link8_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="paint_metallic_silver"/>
   </visual>
   <collision>
     <origin xyz="-1.803783 0.000662 -1.888846" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://mirabb_description/meshes/eoat_SMALL_PAD__1__1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://mirabb_description/meshes/link8_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
+
+<!-- AMR Joints -->
 
 <joint name="joint_Base_LeftWheel" type="continuous">
   <origin xyz="-0.000842 -0.331703 0.102346" rpy="0 0 0"/>
@@ -445,96 +454,116 @@
   <axis xyz="-0.0 1.0 -0.0"/>
 </joint>
 
-<joint name="joint_Base_link0" type="fixed">
+<!-- ============================================================ -->
+
+<!-- Robot arm Joints  -->
+
+<joint name="joint0" type="fixed">
   <origin xyz="0.357783 -0.000662 0.322346" rpy="0 0 0"/>
   <parent link="base_link"/>
-  <child link="abb_link0__1___1__1"/>
+  <child link="link0_1"/>
 </joint>
 
-<joint name="joint_link0_link1" type="revolute">
+<!-- <joint name="joint1" type="continuous"> -->
+<joint name="joint1" type="revolute">
   <origin xyz="0.0 0.0 0.1535" rpy="0 0 0"/>
-  <parent link="abb_link0__1___1__1"/>
-  <child link="abb_link1__1___1__1"/>
+  <parent link="link0_1"/>
+  <child link="link1_1"/>
   <axis xyz="0.0 0.0 1.0"/>
-  <limit upper="1.5708" lower="-1.5708" effort="100" velocity="10"/>
+  <limit upper="3.14" lower="-3.14" effort="100" velocity="100"/>
 </joint>
 
-<joint name="joint_link1_link2" type="revolute">
+<!-- <joint name="joint2" type="continuous"> -->
+<joint name="joint2" type="revolute">
   <origin xyz="0.175 -0.1225 0.3355" rpy="0 0 0"/>
-  <parent link="abb_link1__1___1__1"/>
-  <child link="abb_link2__1___1__1"/>
+  <parent link="link1_1"/>
+  <child link="link2_1"/>
   <axis xyz="0.0 -1.0 0.0"/>
-  <limit upper="1.5708" lower="-1.5708" effort="100" velocity="10"/>
+  <limit upper="3.14" lower="-3.14" effort="100" velocity="100"/>
 </joint>
 
-<joint name="joint_link2_link3" type="revolute">
+<!-- <joint name="joint3" type="continuous"> -->
+<joint name="joint3" type="revolute">
   <origin xyz="0.0 -0.0267 0.9" rpy="0 0 0"/>
-  <parent link="abb_link2__1___1__1"/>
-  <child link="abb_link3__1___1__1"/>
+  <parent link="link2_1"/>
+  <child link="link3_1"/>
   <axis xyz="-0.0 1.0 -0.0"/>
-  <limit upper="1.5708" lower="-1.5708" effort="100" velocity="10"/>
+  <limit upper="3.14" lower="-3.14" effort="100" velocity="100"/>
 </joint>
 
-<joint name="joint_link3_link4" type="revolute">
+<!-- <joint name="joint4" type="continuous"> -->
+<joint name="joint4" type="revolute">
   <origin xyz="0.3401 0.1492 0.175" rpy="0 0 0"/>
-  <parent link="abb_link3__1___1__1"/>
-  <child link="abb_link4__1___1__1"/>
+  <parent link="link3_1"/>
+  <child link="link4_1"/>
   <axis xyz="1.0 0.0 -0.0"/>
-  <limit upper="1.5708" lower="-1.5708" effort="100" velocity="10"/>
+  <limit upper="3.14" lower="-3.14" effort="100" velocity="100"/>
 </joint>
 
-<joint name="joint_link4_link5" type="revolute">
+<!-- <joint name="joint5" type="continuous"> -->
+<joint name="joint5" type="revolute">
   <origin xyz="0.6199 0.064 0.0" rpy="0 0 0"/>
-  <parent link="abb_link4__1___1__1"/>
-  <child link="abb_link5__1___1__1"/>
+  <parent link="link4_1"/>
+  <child link="link5_1"/>
   <axis xyz="0.0 -1.0 0.0"/>
-  <limit upper="1.5708" lower="-1.5708" effort="100" velocity="10"/>
+  <limit upper="3.14" lower="-3.14" effort="100" velocity="100"/>
 </joint>
 
-<joint name="joint_link5_link6" type="revolute">
+<!-- <joint name="joint6" type="continuous"> -->
+<joint name="joint6" type="revolute">
   <origin xyz="0.065 -0.064 0.0" rpy="0 0 0"/>
-  <parent link="abb_link5__1___1__1"/>
-  <child link="abb_link6__1___1__1"/>
+  <parent link="link5_1"/>
+  <child link="link6_1"/>
   <axis xyz="1.0 0.0 -0.0"/>
-  <limit upper="1.5708" lower="-1.5708" effort="100" velocity="10"/>
+  <limit upper="3.14" lower="-3.14" effort="100" velocity="100"/>
 </joint>
 
-<joint name="joint_link6_frame" type="fixed">
+<!-- ============================================================ -->
+
+<!-- EOAT Joints -->
+
+<joint name="joint7" type="fixed">
   <origin xyz="0.07 0.025 0.043301" rpy="0 0 0"/>
-  <parent link="abb_link6__1___1__1"/>
-  <child link="eoat_FRAME__1__1"/>
+  <parent link="link6_1"/>
+  <child link="link7_1"/>
 </joint>
 
-<joint name="joint_frame_Lpad" type="revolute">
+<joint name="joint8" type="revolute">
+<!-- <joint name="joint8" type="fixed"> -->
   <origin xyz="0.22 -0.105 -0.178801" rpy="0 0 0"/>
-  <parent link="eoat_FRAME__1__1"/>
-  <child link="eoat_LARGE_PAD__1__1"/>
+  <parent link="link7_1"/>
+  <child link="link11_1"/>
   <axis xyz="-0.0 1.0 -0.0"/>
-  <limit upper="0.0" lower="-1.5708" effort="100" velocity="10"/>
+  <limit upper="0.0" lower="-1.5708" effort="10" velocity="10"/>
 </joint>
 
-<joint name="joint_Lpad_lifter" type="prismatic">
+<joint name="joint9" type="prismatic">
+<!-- <joint name="joint9" type="fixed"> -->
   <origin xyz="-0.0775 0.08 -0.117" rpy="0 0 0"/>
-  <parent link="eoat_LARGE_PAD__1__1"/>
-  <child link="eoat_LARGE_PAD_LIFTER__1__1"/>
+  <parent link="link11_1"/>
+  <child link="link10_1"/>
   <axis xyz="-1.0 -0.0 0.0"/>
-  <limit upper="0.70" lower="0.0" effort="100" velocity="10"/>
+  <limit upper="0.07" lower="-0.0" effort="10" velocity="10"/>
 </joint>
 
-<joint name="joint_frame_Slifter" type="prismatic">
+<joint name="joint10" type="prismatic">
+<!-- <joint name="joint10" type="fixed"> -->
   <origin xyz="0.178 -0.02441 -0.098801" rpy="0 0 0"/>
-  <parent link="eoat_FRAME__1__1"/>
-  <child link="eoat_SMALL_PAD_LIFTER__1__1"/>
+  <parent link="link7_1"/>
+  <child link="link9_1"/>
   <axis xyz="1.0 0.0 -0.0"/>
-  <limit upper="0.7" lower="0.0" effort="100" velocity="10"/>
+  <limit upper="0.07" lower="0.0" effort="10" velocity="10"/>
 </joint>
 
-<joint name="joint_Slifter_Spad" type="prismatic">
+<!-- <joint name="joint11" type="prismatic"> -->
+<joint name="joint11" type="fixed">
   <origin xyz="-0.002 -0.00059 0.058" rpy="0 0 0"/>
-  <parent link="eoat_SMALL_PAD_LIFTER__1__1"/>
-  <child link="eoat_SMALL_PAD__1__1"/>
+  <parent link="link9_1"/>
+  <child link="link8_1"/>
   <axis xyz="1.0 0.0 -0.0"/>
-  <limit upper="0.7" lower="0.0" effort="100" velocity="10"/>
+  <!-- <limit upper="0.07" lower="0.0" effort="10" velocity="10"/> -->
 </joint>
+
+<!-- ============================================================ -->
 
 </robot>

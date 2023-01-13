@@ -1,0 +1,76 @@
+# mirabb_controller:
+mirabb:
+  # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50
+
+  # Position Controllers --------------------------------------
+  # 
+  # - MIR
+  # joint_Base_LeftWheel_position_controller:
+  #   type: effort_controllers/JointPositionController
+  #   joint: joint_Base_LeftWheel
+  #   pid: {p: 100.0, i: 0.01, d: 10.0}
+  # joint_Base_RightWheel_position_controller:
+  #   type: effort_controllers/JointPositionController
+  #   joint: joint_Base_RightWheel
+  #   pid: {p: 100.0, i: 0.01, d: 10.0}
+  # joint_Base_rear_right_caster_position_controller:
+  #   type: effort_controllers/JointPositionController
+  #   joint: joint_Base_rear_right_caster
+  #   pid: {p: 100.0, i: 0.01, d: 10.0}
+  # joint_Base_rear_left_caster_position_controller:
+  #   type: effort_controllers/JointPositionController
+  #   joint: joint_Base_rear_left_caster
+  #   pid: {p: 100.0, i: 0.01, d: 10.0}
+  # joint_Base_front_right_caster_position_controller:
+  #   type: effort_controllers/JointPositionController
+  #   joint: joint_Base_front_right_caster
+  #   pid: {p: 100.0, i: 0.01, d: 10.0}
+  # joint_Base_front_left_caster_position_controller:
+  #   type: effort_controllers/JointPositionController
+  #   joint: joint_Base_front_left_caster
+  #   pid: {p: 100.0, i: 0.01, d: 10.0}
+
+  # - ABB + EAOT
+  joint1_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: joint1
+    pid: {p: 1000.0, i: 1.0, d: 10.0}
+  joint2_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: joint2
+    pid: {p: 10000.0, i: 1.0, d: 10.0}
+  joint3_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: joint3
+    pid: {p: 10000.0, i: 1.0, d: 10.0}
+  joint4_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: joint4
+    pid: {p: 1000.0, i: 1.0, d: 10.0}
+  joint5_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: joint5
+    pid: {p: 1000.0, i: 1.0, d: 10.0}
+  joint6_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: joint6
+    pid: {p: 1000.0, i: 1.0, d: 10.0}
+  joint8_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: joint8
+    pid: {p: 1000.0, i: 1.0, d: 1.0}
+  joint9_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: joint9
+    pid: {p: 1000.0, i: 1.0, d: 1.0}
+  joint10_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: joint10
+    pid: {p: 1000.0, i: 1.0, d: 1.0}
+  joint11_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: joint11
+    pid: {p: 1000.0, i: 1.0, d: 1.0}

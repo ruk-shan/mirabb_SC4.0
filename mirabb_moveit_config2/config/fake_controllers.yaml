@@ -1,0 +1,21 @@
+controller_list:
+  - name: fake_abb_arm_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - joint1
+      - joint2
+      - joint3
+      - joint4
+      - joint5
+      - joint6
+  - name: fake_eaot_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - joint10
+      - joint8
+      - joint9
+initial:  # Define initial robot poses per group
+  - group: abb_arm
+    pose: home
+  - group: eaot
+    pose: home

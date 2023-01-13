@@ -8,14 +8,7 @@ project(mirabb_description)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
-  message_generation
-  roscpp
   rospy
-  std_msgs
-  geometry_msgs
-  urdf
-  xacro
-  message_generation
 )
 
 ## System dependencies are found with CMake's conventions
@@ -112,11 +105,6 @@ catkin_package(
 #  LIBRARIES fusion2urdf
 #  CATKIN_DEPENDS rospy
 #  DEPENDS system_lib
-  CATKIN_DEPENDS
-  geometry_msgs
-  roscpp
-  rospy
-  std_msgs
 )
 
 ###########

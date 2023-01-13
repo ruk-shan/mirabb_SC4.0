@@ -1,16 +1,15 @@
-#Instead of using TAB for indentation, use two spaces at the place of one TAB
-
+mirabb:
 #Controller to control robot arm joints
-robot_arm_controller:
-  type: "position_controllers/JointTrajectoryController"
-  joints: [joint_link0_link1, joint_link1_link2, joint_link2_link3, joint_link3_link4, joint_link4_link5, joint_link5_link6]
+  abb_arm_controller:
+    type: "position_controllers/JointTrajectoryController"
+    joints: [joint1, joint2, joint3, joint4, joint5,joint6]
 
 #Controller to control end effector joints
-hand_ee_controller:
-  type: "position_controllers/JointTrajectoryController"
-  joints: [joint_frame_Lpad, joint_Lpad_lifter, joint_frame_Slifter, joint_Slifter_Spad]
+  eoat_controller:
+    type: "position_controllers/JointTrajectoryController"
+    joints: [joint8, joint9, joint10]
 
 #Controller to continuously publish joint states/positions
-joint_state_controller:
-  type: "joint_state_controller/JointStateController"
-  publish_rate: 50
+  joint_state_controller:
+    type: "joint_state_controller/JointStateController"
+    publish_rate: 50

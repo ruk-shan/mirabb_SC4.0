@@ -1,0 +1,15 @@
+<launch>
+	<!-- Launch Your robot arms launch file which loads the robot in Gazebo and spawns the controllers -->
+	<include file = "$(find mirabb_description)/launch/gazebo.launch" />
+	<include file = "$(find mirabb_description)/launch/controller.launch" />
+
+	<!-- Launch Moveit Move Group Node -->
+	<include file = "$(find mirabb_moveit_config3)/launch/move_group.launch" />
+
+	<!-- Run Rviz and load the default configuration to see the state of the move_group node -->
+	<arg name="use_rviz" default="true" />
+	<include file="$(find mirabb_moveit_config3)/launch/moveit_rviz.launch" if="$(arg use_rviz)">
+		<arg name="rviz_config" value="$(find mirabb_moveit_config3)/launch/moveit.rviz"/>
+	</include>
+
+</launch>

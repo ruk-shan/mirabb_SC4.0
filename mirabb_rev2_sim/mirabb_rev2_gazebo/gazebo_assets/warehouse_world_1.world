@@ -1,0 +1,1656 @@
+<sdf version='1.7'>
+  <world name='default'>
+    <light name='sun' type='directional'>
+      <cast_shadows>1</cast_shadows>
+      <pose>0 0 10 0 -0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.1 -0.9</direction>
+      <spot>
+        <inner_angle>0</inner_angle>
+        <outer_angle>0</outer_angle>
+        <falloff>0</falloff>
+      </spot>
+    </light>
+    <model name='ground_plane'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <surface>
+            <contact>
+              <collide_bitmask>65535</collide_bitmask>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>100</mu>
+                <mu2>50</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <gravity>0 0 -9.8</gravity>
+    <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
+    <atmosphere type='adiabatic'/>
+    <physics type='ode'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+    <scene>
+      <ambient>0.4 0.4 0.4 1</ambient>
+      <background>0.7 0.7 0.7 1</background>
+      <shadows>1</shadows>
+    </scene>
+    <wind/>
+    <spherical_coordinates>
+      <surface_model>EARTH_WGS84</surface_model>
+      <latitude_deg>0</latitude_deg>
+      <longitude_deg>0</longitude_deg>
+      <elevation>0</elevation>
+      <heading_deg>0</heading_deg>
+    </spherical_coordinates>
+    <state world_name='default'>
+      <sim_time>3 585000000</sim_time>
+      <real_time>5 8872643</real_time>
+      <wall_time>1650874209 389702775</wall_time>
+      <iterations>3585</iterations>
+      <model name='500x500x500_box'>
+        <pose>25.2037 2.64252 1.67219 0.001208 -6.1e-05 4e-05</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>25.2037 2.64252 1.67219 0.001208 -6.1e-05 4e-05</pose>
+          <velocity>-0.000716 0.000687 -0.002534 0.001802 -0.003251 0.000567</velocity>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -9.8 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='500x500x500_box_clone'>
+        <pose>25.7078 2.66343 1.67214 0.000821 2.3e-05 -0.000293</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>25.7078 2.66343 1.67214 0.000821 2.3e-05 -0.000293</pose>
+          <velocity>-0.000412 0.003286 -0.02068 -0.00714 -0.001993 0.000515</velocity>
+          <acceleration>0.161522 -0.183551 -30.3157 2.39418 0.705638 0.042043</acceleration>
+          <wrench>0.161522 -0.183551 -30.3157 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='500x500x500_box_clone_clone'>
+        <pose>25.7192 2.54333 2.17204 0.000821 2.5e-05 -0.000706</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>25.7192 2.54333 2.17204 0.000821 2.5e-05 -0.000706</pose>
+          <velocity>-0.001355 0.006871 -0.009777 -0.007212 -0.002024 0.000513</velocity>
+          <acceleration>-0.161522 0.183551 10.7157 0.161559 -0.391572 -0.024731</acceleration>
+          <wrench>-0.161522 0.183551 10.7157 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='500x500x500_box_clone_clone_clone'>
+        <pose>25.2185 2.48263 2.17201 0.001209 -6.2e-05 0.000119</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>25.2185 2.48263 2.17201 0.001209 -6.2e-05 0.000119</pose>
+          <velocity>-0.002278 -0.000244 0.007254 0.001877 -0.003292 0.000447</velocity>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -9.8 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='euro_pallet'>
+        <pose>25.5501 2.52919 1.34987 -4e-06 0 -1.5361</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>25.5501 2.52919 1.34987 -4e-06 0 -1.5361</pose>
+          <velocity>3e-06 -2e-06 9.4e-05 2.3e-05 4.7e-05 0</velocity>
+          <acceleration>-0.061528 -0.557091 -6.91884 -1.77264 -0.062191 -0.000323</acceleration>
+          <wrench>-1.23056 -11.1418 -138.377 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='ground_plane'>
+        <pose>0 0 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>0 0 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='mirabb_rev2'>
+        <pose>23.9168 7.02344 1.26939 0.002315 -0.001119 -1.11837</pose>
+        <scale>1 1 1</scale>
+        <link name='abb_link_1_1'>
+          <pose>24.1123 6.61871 1.73212 0.002312 -0.001124 -1.11635</pose>
+          <velocity>0.000478 -0.001497 0.001307 0.00302 0.000807 0.000953</velocity>
+          <acceleration>0.686382 -2.58421 2.51583 -1.24518 0.355696 -0.109546</acceleration>
+          <wrench>2.28529 -8.60407 8.37637 0 -0 0</wrench>
+        </link>
+        <link name='abb_link_2_1'>
+          <pose>24.0782 6.4077 2.06753 0.002312 0.000914 -1.11634</pose>
+          <velocity>0.001333 -0.001449 0.000536 0.003233 -0.000408 0.000775</velocity>
+          <acceleration>0.997421 -6.49631 0.861879 0.435559 -0.064761 -3.10217</acceleration>
+          <wrench>2.68336 -17.477 2.31871 0 -0 0</wrench>
+        </link>
+        <link name='abb_link_3_1'>
+          <pose>24.0524 6.39397 3.16246 0.002391 0.257199 -1.11574</pose>
+          <velocity>-0.014346 -0.006189 0.030268 0.003143 0.144014 0.000801</velocity>
+          <acceleration>0.904529 -10.7871 2.23572 -0.688365 -0.14646 0.100808</acceleration>
+          <wrench>0.044968 -0.536271 0.111147 0 -0 0</wrench>
+        </link>
+        <link name='abb_link_4_1'>
+          <pose>24.3502 6.12385 3.24554 0.015243 0.257199 -1.11574</pose>
+          <velocity>0.030943 -0.007345 -0.019205 0.00729 0.144017 -0.000259</velocity>
+          <acceleration>0.898175 -9.73854 2.05099 2.00465 0.791135 -2.88381</acceleration>
+          <wrench>0.066301 -0.718874 0.151399 0 -0 0</wrench>
+        </link>
+        <link name='abb_link_5_1'>
+          <pose>24.7102 5.34143 3.01874 3.11716 0.923078 2.00249</pose>
+          <velocity>-0.020044 -0.004749 -0.183838 0.006153 -0.353262 -0.006441</velocity>
+          <acceleration>0.955109 -8.48405 2.05506 0.589364 -0.870904 2.29998</acceleration>
+          <wrench>0.002778 -0.024674 0.005977 0 -0 0</wrench>
+        </link>
+        <link name='abb_link_6_1'>
+          <pose>24.7158 5.37832 2.97838 3.11164 0.923078 2.00249</pose>
+          <velocity>-0.011419 -0.004721 -0.186059 0.009307 -0.353315 -0.002176</velocity>
+          <acceleration>0.950152 -8.8116 2.08254 -0.997467 -0.337587 0.406694</acceleration>
+          <wrench>0.003594 -0.03333 0.007877 0 -0 0</wrench>
+        </link>
+        <link name='base_link'>
+          <pose>23.9168 7.02344 1.26939 0.002315 -0.001119 -1.11837</pose>
+          <velocity>-7.7e-05 0.000759 0.001085 0.003553 0.000828 -0.000732</velocity>
+          <acceleration>-0.011391 -0.114255 3.28467 -1.35526 1.22743 -0.117198</acceleration>
+          <wrench>-11.6662 -117.012 3363.93 0 -0 0</wrench>
+        </link>
+        <link name='left_drive_wheel_1'>
+          <pose>23.5985 6.86514 1.37683 0.002384 0.014162 -1.11834</pose>
+          <velocity>0.000204 -0.001617 -0.008671 -0.013235 0.000777 -0.000183</velocity>
+          <acceleration>-0.36413 -0.242455 -18.2125 1.32922 0.567979 -2.71815</acceleration>
+          <wrench>-1.92772 -1.28357 -96.4181 0 -0 0</wrench>
+        </link>
+        <link name='right_drive_wheel_1'>
+          <pose>24.239 7.17647 1.37852 0.002388 0.004729 -1.11836</pose>
+          <velocity>0.000407 -0.001701 0.017511 0.017788 0.003699 -0.000635</velocity>
+          <acceleration>-0.518051 -0.440954 35.0134 2.03101 0.695949 -0.576724</acceleration>
+          <wrench>-2.74259 -2.33443 185.363 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='warehouse'>
+        <pose>31.4 5.75779 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>31.4 5.75779 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <light name='sun'>
+        <pose>0 0 10 0 -0 0</pose>
+      </light>
+      <light name='user_spot_light_0'>
+        <pose>-76.1075 596.586 1 0 -0 0</pose>
+      </light>
+    </state>
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose>21.8811 26.7544 5.26547 0 0.317797 -1.62082</pose>
+        <view_controller>orbit</view_controller>
+        <projection_type>perspective</projection_type>
+      </camera>
+    </gui>
+    <model name='mirabb_rev2'>
+      <link name='base_link'>
+        <inertial>
+          <pose>-0.091604 0.012095 0.328124 0 -0 0</pose>
+          <mass>1024.13</mass>
+          <inertia>
+            <ixx>245.289</ixx>
+            <ixy>2.89373</ixy>
+            <ixz>32.7882</ixz>
+            <iyy>375.814</iyy>
+            <iyz>1.06766</iyz>
+            <izz>349.642</izz>
+          </inertia>
+        </inertial>
+        <collision name='base_link_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/shan/ros/ros1_ws/dev_ws/src/mirabb_rev2_description/meshes/base_link.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>0.2</mu>
+                <mu2>0.2</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <collision name='base_link_fixed_joint_lump__IRC5_1_collision_1'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/shan/ros/ros1_ws/dev_ws/src/mirabb_rev2_description/meshes/IRC5_1.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>0.2</mu>
+                <mu2>0.2</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <collision name='base_link_fixed_joint_lump__abb_link_0_1_collision_2'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/shan/ros/ros1_ws/dev_ws/src/mirabb_rev2_description/meshes/abb_link_0_1.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>0.2</mu>
+                <mu2>0.2</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <collision name='base_link_fixed_joint_lump__battery_pack_1_collision_3'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/shan/ros/ros1_ws/dev_ws/src/mirabb_rev2_description/meshes/battery_pack_1.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>0.2</mu>
+                <mu2>0.2</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <collision name='base_link_fixed_joint_lump__front_left_caster_1_collision_4'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/shan/ros/ros1_ws/dev_ws/src/mirabb_rev2_description/meshes/front_left_caster_1.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>0.2</mu>
+                <mu2>0.2</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <collision name='base_link_fixed_joint_lump__rear_lidar_1_collision_5'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/shan/ros/ros1_ws/dev_ws/src/mirabb_rev2_description/meshes/rear_lidar_1.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>0.2</mu>
+                <mu2>0.2</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <collision name='base_link_fixed_joint_lump__front_right_caster_1_collision_6'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/shan/ros/ros1_ws/dev_ws/src/mirabb_rev2_description/meshes/front_right_caster_1.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>0.2</mu>
+                <mu2>0.2</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <collision name='base_link_fixed_joint_lump__rear_left_caster_1_collision_7'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/shan/ros/ros1_ws/dev_ws/src/mirabb_rev2_description/meshes/rear_left_caster_1.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>0.2</mu>
+                <mu2>0.2</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <collision name='base_link_fixed_joint_lump__front_lidar_1_collision_8'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/shan/ros/ros1_ws/dev_ws/src/mirabb_rev2_description/meshes/front_lidar_1.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>0.2</mu>
+                <mu2>0.2</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <collision name='base_link_fixed_joint_lump__rear_right_caster_1_collision_9'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/shan/ros/ros1_ws/dev_ws/src/mirabb_rev2_description/meshes/rear_right_caster_1.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>0.2</mu>
+                <mu2>0.2</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='base_link_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/shan/ros/ros1_ws/dev_ws/src/mirabb_rev2_description/meshes/base_link.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/DarkYellow</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='base_link_fixed_joint_lump__IRC5_1_visual_1'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/shan/ros/ros1_ws/dev_ws/src/mirabb_rev2_description/meshes/IRC5_1.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/DarkGrey</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='base_link_fixed_joint_lump__abb_link_0_1_visual_2'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/shan/ros/ros1_ws/dev_ws/src/mirabb_rev2_description/meshes/abb_link_0_1.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/White</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='base_link_fixed_joint_lump__battery_pack_1_visual_3'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/shan/ros/ros1_ws/dev_ws/src/mirabb_rev2_description/meshes/battery_pack_1.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Black</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='base_link_fixed_joint_lump__front_left_caster_1_visual_4'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/shan/ros/ros1_ws/dev_ws/src/mirabb_rev2_description/meshes/front_left_caster_1.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Yellow</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='base_link_fixed_joint_lump__rear_lidar_1_visual_5'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/shan/ros/ros1_ws/dev_ws/src/mirabb_rev2_description/meshes/rear_lidar_1.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Blue</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='base_link_fixed_joint_lump__front_right_caster_1_visual_6'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/shan/ros/ros1_ws/dev_ws/src/mirabb_rev2_description/meshes/front_right_caster_1.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Yellow</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='base_link_fixed_joint_lump__rear_left_caster_1_visual_7'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/shan/ros/ros1_ws/dev_ws/src/mirabb_rev2_description/meshes/rear_left_caster_1.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Yellow</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='base_link_fixed_joint_lump__front_lidar_1_visual_8'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/shan/ros/ros1_ws/dev_ws/src/mirabb_rev2_description/meshes/front_lidar_1.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Blue</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='base_link_fixed_joint_lump__rear_right_caster_1_visual_9'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/shan/ros/ros1_ws/dev_ws/src/mirabb_rev2_description/meshes/rear_right_caster_1.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Yellow</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <gravity>1</gravity>
+        <sensor name='rear_hokuyo_sensor' type='ray'>
+          <visualize>0</visualize>
+          <update_rate>10</update_rate>
+          <ray>
+            <scan>
+              <horizontal>
+                <samples>720</samples>
+                <resolution>1</resolution>
+                <min_angle>0</min_angle>
+                <max_angle>4.71239</max_angle>
+              </horizontal>
+              <vertical>
+                <samples>1</samples>
+                <min_angle>0</min_angle>
+                <max_angle>0</max_angle>
+              </vertical>
+            </scan>
+            <range>
+              <min>0.1</min>
+              <max>30</max>
+              <resolution>0.01</resolution>
+            </range>
+            <noise>
+              <type>gaussian</type>
+              <mean>0</mean>
+              <stddev>0.01</stddev>
+            </noise>
+          </ray>
+          <plugin name='gazebo_ros_head_hokuyo_controller' filename='libgazebo_ros_laser.so'>
+            <topicName>/mirabb_rev2/laser/rear_scan</topicName>
+            <frameName>rear_lidar_1</frameName>
+            <robotNamespace>/</robotNamespace>
+          </plugin>
+          <pose>-0.586482 -0.368099 0.203225 0 -0 0</pose>
+        </sensor>
+        <sensor name='front_hokuyo_sensor' type='ray'>
+          <visualize>0</visualize>
+          <update_rate>10</update_rate>
+          <ray>
+            <scan>
+              <horizontal>
+                <samples>720</samples>
+                <resolution>1</resolution>
+                <min_angle>0</min_angle>
+                <max_angle>-4.71239</max_angle>
+              </horizontal>
+              <vertical>
+                <samples>1</samples>
+                <min_angle>0</min_angle>
+                <max_angle>0</max_angle>
+              </vertical>
+            </scan>
+            <range>
+              <min>0.1</min>
+              <max>30</max>
+              <resolution>0.01</resolution>
+            </range>
+            <noise>
+              <type>gaussian</type>
+              <mean>0</mean>
+              <stddev>0.01</stddev>
+            </noise>
+          </ray>
+          <plugin name='gazebo_ros_head_hokuyo_controller' filename='libgazebo_ros_laser.so'>
+            <topicName>/mirabb_rev2/laser/front_scan</topicName>
+            <frameName>front_lidar_1</frameName>
+            <robotNamespace>/</robotNamespace>
+          </plugin>
+          <pose>0.593218 0.371901 0.203225 0 -0 0</pose>
+        </sensor>
+        <self_collide>1</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='joint_abb_1_to_abb_0' type='revolute'>
+        <pose relative_to='base_link'>0.45 0 0.462225 0 -0 0</pose>
+        <parent>base_link</parent>
+        <child>abb_link_1_1</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='abb_link_1_1'>
+        <pose relative_to='joint_abb_1_to_abb_0'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0.077038 0.02469 0.240698 0 -0 0</pose>
+          <mass>3.32947</mass>
+          <inertia>
+            <ixx>8.73282</ixx>
+            <ixy>-0.760548</ixy>
+            <ixz>-2.34954</ixz>
+            <iyy>11.3782</iyy>
+            <iyz>-0.812185</iyz>
+            <izz>9.10597</izz>
+          </inertia>
+        </inertial>
+        <collision name='abb_link_1_1_collision'>
+          <pose>-0.45 0 -0.462225 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/shan/ros/ros1_ws/dev_ws/src/mirabb_rev2_description/meshes/abb_link_1_1.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>0.2</mu>
+                <mu2>0.2</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='abb_link_1_1_visual'>
+          <pose>-0.45 0 -0.462225 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/shan/ros/ros1_ws/dev_ws/src/mirabb_rev2_description/meshes/abb_link_1_1.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/White</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>1</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='joint_abb_2_to_abb_1' type='revolute'>
+        <pose relative_to='abb_link_1_1'>0.175 -0.1225 0.3355 0 -0 0</pose>
+        <parent>abb_link_1_1</parent>
+        <child>abb_link_2_1</child>
+        <axis>
+          <xyz>0 -1 0</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='abb_link_2_1'>
+        <pose relative_to='joint_abb_2_to_abb_1'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>1e-06 -0.047559 0.487826 0 -0 0</pose>
+          <mass>2.6903</mass>
+          <inertia>
+            <ixx>29.3557</ixx>
+            <ixy>-0.000106</ixy>
+            <ixz>0.001275</ixz>
+            <iyy>30.1058</iyy>
+            <iyz>0.846949</iyz>
+            <izz>1.55716</izz>
+          </inertia>
+        </inertial>
+        <collision name='abb_link_2_1_collision'>
+          <pose>-0.625 0.1225 -0.797725 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/shan/ros/ros1_ws/dev_ws/src/mirabb_rev2_description/meshes/abb_link_2_1.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>0.2</mu>
+                <mu2>0.2</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='abb_link_2_1_visual'>
+          <pose>-0.625 0.1225 -0.797725 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/shan/ros/ros1_ws/dev_ws/src/mirabb_rev2_description/meshes/abb_link_2_1.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/White</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>1</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='joint_abb_3_to_abb_2' type='revolute'>
+        <pose relative_to='abb_link_2_1'>0 -0.0267 1.095 0 -0 0</pose>
+        <parent>abb_link_2_1</parent>
+        <child>abb_link_3_1</child>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='abb_link_3_1'>
+        <pose relative_to='joint_abb_3_to_abb_2'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0.040712 0.198466 0.118762 0 -0 0</pose>
+          <mass>0.0497142</mass>
+          <inertia>
+            <ixx>8.8939</ixx>
+            <ixy>0.577245</ixy>
+            <ixz>-0.921456</ixz>
+            <iyy>10.8879</iyy>
+            <iyz>-0.110794</iyz>
+            <izz>8.9468</izz>
+          </inertia>
+        </inertial>
+        <collision name='abb_link_3_1_collision'>
+          <pose>-0.625 0.1492 -1.89272 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/shan/ros/ros1_ws/dev_ws/src/mirabb_rev2_description/meshes/abb_link_3_1.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>0.2</mu>
+                <mu2>0.2</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='abb_link_3_1_visual'>
+          <pose>-0.625 0.1492 -1.89272 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/shan/ros/ros1_ws/dev_ws/src/mirabb_rev2_description/meshes/abb_link_3_1.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/White</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>1</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='joint_abb_4_to_abb_3' type='revolute'>
+        <pose relative_to='abb_link_3_1'>0.3401 0.1492 0.175 0 -0 0</pose>
+        <parent>abb_link_3_1</parent>
+        <child>abb_link_4_1</child>
+        <axis>
+          <xyz>1 0 0</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='abb_link_4_1'>
+        <pose relative_to='joint_abb_4_to_abb_3'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0.498166 0.000808 0.000235 0 -0 0</pose>
+          <mass>0.0738175</mass>
+          <inertia>
+            <ixx>0.158364</ixx>
+            <ixy>-0.02267</ixy>
+            <ixz>-0.003699</ixz>
+            <iyy>6.95683</iyy>
+            <iyz>0.000119</iyz>
+            <izz>6.9819</izz>
+          </inertia>
+        </inertial>
+        <collision name='abb_link_4_1_collision'>
+          <pose>-0.9651 0 -2.06772 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/shan/ros/ros1_ws/dev_ws/src/mirabb_rev2_description/meshes/abb_link_4_1.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>0.2</mu>
+                <mu2>0.2</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='abb_link_4_1_visual'>
+          <pose>-0.9651 0 -2.06772 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/shan/ros/ros1_ws/dev_ws/src/mirabb_rev2_description/meshes/abb_link_4_1.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/White</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>1</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='joint_abb_5_to_abb_4' type='revolute'>
+        <pose relative_to='abb_link_4_1'>0.8904 -0.0205 0 0 -0 0</pose>
+        <parent>abb_link_4_1</parent>
+        <child>abb_link_5_1</child>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='abb_link_5_1'>
+        <pose relative_to='joint_abb_5_to_abb_4'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0.000242 0.020477 0.000893 0 -0 0</pose>
+          <mass>0.00290831</mass>
+          <inertia>
+            <ixx>0.002454</ixx>
+            <ixy>2e-06</ixy>
+            <ixz>4.7e-05</ixz>
+            <iyy>0.004276</iyy>
+            <iyz>-2e-06</iyz>
+            <izz>0.002692</izz>
+          </inertia>
+        </inertial>
+        <collision name='abb_link_5_1_collision'>
+          <pose>-1.8555 0.0205 -2.06772 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/shan/ros/ros1_ws/dev_ws/src/mirabb_rev2_description/meshes/abb_link_5_1.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>0.2</mu>
+                <mu2>0.2</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='abb_link_5_1_visual'>
+          <pose>-1.8555 0.0205 -2.06772 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/shan/ros/ros1_ws/dev_ws/src/mirabb_rev2_description/meshes/abb_link_5_1.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/White</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>1</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='joint_abb_6_to_abb_5' type='revolute'>
+        <pose relative_to='abb_link_5_1'>0.051 0.0205 0 0 -0 0</pose>
+        <parent>abb_link_5_1</parent>
+        <child>abb_link_6_1</child>
+        <axis>
+          <xyz>1 0 0</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='abb_link_6_1'>
+        <pose relative_to='joint_abb_6_to_abb_5'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0.021309 0 -0.000181 0 -0 0</pose>
+          <mass>0.00378252</mass>
+          <inertia>
+            <ixx>0.000148</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.000107</iyy>
+            <iyz>0</iyz>
+            <izz>0.000109</izz>
+          </inertia>
+        </inertial>
+        <collision name='abb_link_6_1_collision'>
+          <pose>-1.9065 0 -2.06772 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/shan/ros/ros1_ws/dev_ws/src/mirabb_rev2_description/meshes/abb_link_6_1.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>0.2</mu>
+                <mu2>0.2</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='abb_link_6_1_visual'>
+          <pose>-1.9065 0 -2.06772 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/shan/ros/ros1_ws/dev_ws/src/mirabb_rev2_description/meshes/abb_link_6_1.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/White</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>1</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='joint_left_drive_wheel_to_base' type='revolute'>
+        <pose relative_to='base_link'>0.003368 -0.355189 0.108225 0 -0 0</pose>
+        <parent>base_link</parent>
+        <child>left_drive_wheel_1</child>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='left_drive_wheel_1'>
+        <pose relative_to='joint_left_drive_wheel_to_base'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>-0 0.025002 -7e-06 0 -0 0</pose>
+          <mass>5.29405</mass>
+          <inertia>
+            <ixx>0.021658</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.041149</iyy>
+            <iyz>1e-06</iyz>
+            <izz>0.021656</izz>
+          </inertia>
+        </inertial>
+        <collision name='left_drive_wheel_1_collision'>
+          <pose>-0.003368 0.355189 -0.108225 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/shan/ros/ros1_ws/dev_ws/src/mirabb_rev2_description/meshes/left_drive_wheel_1.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>100</mu>
+                <mu2>100</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='left_drive_wheel_1_visual'>
+          <pose>-0.003368 0.355189 -0.108225 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/shan/ros/ros1_ws/dev_ws/src/mirabb_rev2_description/meshes/left_drive_wheel_1.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Green</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>1</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='joint_right_drive_wheel_to_base' type='revolute'>
+        <pose relative_to='base_link'>0.003368 0.356991 0.108225 0 -0 0</pose>
+        <parent>base_link</parent>
+        <child>right_drive_wheel_1</child>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='right_drive_wheel_1'>
+        <pose relative_to='joint_right_drive_wheel_to_base'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 -0.025002 -7e-06 0 -0 0</pose>
+          <mass>5.29405</mass>
+          <inertia>
+            <ixx>0.021658</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.041149</iyy>
+            <iyz>-1e-06</iyz>
+            <izz>0.021656</izz>
+          </inertia>
+        </inertial>
+        <collision name='right_drive_wheel_1_collision'>
+          <pose>-0.003368 -0.356991 -0.108225 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/shan/ros/ros1_ws/dev_ws/src/mirabb_rev2_description/meshes/right_drive_wheel_1.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>100</mu>
+                <mu2>100</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='right_drive_wheel_1_visual'>
+          <pose>-0.003368 -0.356991 -0.108225 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/shan/ros/ros1_ws/dev_ws/src/mirabb_rev2_description/meshes/right_drive_wheel_1.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Green</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>1</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <plugin name='control' filename='libgazebo_ros_control.so'>
+        <robotNamespace>/</robotNamespace>
+      </plugin>
+      <static>0</static>
+      <plugin name='differential_drive_controller' filename='libgazebo_ros_diff_drive.so'>
+        <updateRate>50</updateRate>
+        <leftJoint>joint_left_drive_wheel_to_base</leftJoint>
+        <rightJoint>joint_right_drive_wheel_to_base</rightJoint>
+        <wheelAcceleration>50.0</wheelAcceleration>
+        <wheelTorque>500</wheelTorque>
+        <commandTopic>cmd_vel</commandTopic>
+        <odometryTopic>odom</odometryTopic>
+        <odometryFrame>odom</odometryFrame>
+        <robotBaseFrame>base_link</robotBaseFrame>
+        <odometrySource>1</odometrySource>
+        <publishWheelTF>1</publishWheelTF>
+        <publishOdom>1</publishOdom>
+        <publishWheelJointState>1</publishWheelJointState>
+        <legacyMode>0</legacyMode>
+        <robotNamespace>/</robotNamespace>
+      </plugin>
+      <pose>0 0 0 0 -0 0</pose>
+    </model>
+    <model name='warehouse'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://warehouse_02/meshes/warehouse_sim_9.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://warehouse_02/meshes/warehouse_sim_9.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>0.427359 1.0909 0 0 -0 0</pose>
+    </model>
+    <light name='user_spot_light_0' type='spot'>
+      <pose>-76.1075 596.586 1 0 -0 0</pose>
+      <diffuse>0.5 0.5 0.5 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <direction>0 0 -1</direction>
+      <attenuation>
+        <range>20</range>
+        <constant>0.5</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <cast_shadows>0</cast_shadows>
+      <spot>
+        <inner_angle>0.6</inner_angle>
+        <outer_angle>1</outer_angle>
+        <falloff>1</falloff>
+      </spot>
+    </light>
+    <model name='euro_pallet'>
+      <link name='link'>
+        <pose>0 0 0.05 0 -0 0</pose>
+        <inertial>
+          <mass>20</mass>
+          <inertia>
+            <ixx>2.43</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1.1</iyy>
+            <iyz>0</iyz>
+            <izz>3.47</izz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.05 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://euro_pallet/meshes/pallet.dae</uri>
+              <scale>0.1 0.1 0.1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose>0 0 0.05 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://euro_pallet/meshes/pallet.dae</uri>
+              <scale>0.1 0.1 0.1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>42.214 -15.8161 0 0 -0 0</pose>
+    </model>
+    <model name='500x500x500_box'>
+      <link name='link'>
+        <pose>0 0 0 0 -0 0</pose>
+        <collision name='collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://500x500x500_box/meshes/500x500x500_box_v2.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://500x500x500_box/meshes/500x500x500_box_v2.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+          <mass>1</mass>
+        </inertial>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>34.2585 25.1777 0 0 -0 0</pose>
+    </model>
+    <model name='500x500x500_box_clone'>
+      <link name='link'>
+        <pose>0 0 0 0 -0 0</pose>
+        <collision name='collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://500x500x500_box/meshes/500x500x500_box_v2.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://500x500x500_box/meshes/500x500x500_box_v2.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+          <mass>1</mass>
+        </inertial>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>26.0315 1.35336 1.67324 0 -0 0</pose>
+    </model>
+    <model name='500x500x500_box_clone_clone'>
+      <link name='link'>
+        <pose>0 0 0 0 -0 0</pose>
+        <collision name='collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://500x500x500_box/meshes/500x500x500_box_v2.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://500x500x500_box/meshes/500x500x500_box_v2.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+          <mass>1</mass>
+        </inertial>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>25.658 1.64461 1.67324 0 -0 0</pose>
+    </model>
+    <model name='500x500x500_box_clone_clone_clone'>
+      <link name='link'>
+        <pose>0 0 0 0 -0 0</pose>
+        <collision name='collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://500x500x500_box/meshes/500x500x500_box_v2.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://500x500x500_box/meshes/500x500x500_box_v2.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+          <mass>1</mass>
+        </inertial>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>25.2239 2.48317 2.17238 0.002553 -0.000263 -0.00035</pose>
+    </model>
+  </world>
+</sdf>

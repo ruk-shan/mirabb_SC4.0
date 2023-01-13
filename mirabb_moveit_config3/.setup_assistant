@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: mirabb_description
+    relative_path: urdf/mirabb.xacro
+    xacro_args: ""
+  SRDF:
+    relative_path: config/mirabb.srdf
+  CONFIG:
+    author_name: Shan
+    author_email: ruk.shan@outlook.com
+    generated_timestamp: 1671555112

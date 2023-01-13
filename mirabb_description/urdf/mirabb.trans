@@ -1,6 +1,7 @@
 <?xml version="1.0" ?>
 <robot name="mirabb" xmlns:xacro="http://www.ros.org/wiki/xacro" >
 
+<!-- AMR -->
 <transmission name="joint_Base_LeftWheel_tran">
   <type>transmission_interface/SimpleTransmission</type>
   <joint name="joint_Base_LeftWheel">
@@ -66,115 +67,148 @@
     <mechanicalReduction>1</mechanicalReduction>
   </actuator>
 </transmission>
+<!-- =============================================================================== -->
 
-<transmission name="joint_link0_link1_tran">
+<!-- ARM -->
+
+<transmission name="joint1_tran">
   <type>transmission_interface/SimpleTransmission</type>
-  <joint name="joint_link0_link1">
+  <joint name="joint1">
+    <!-- <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface> -->
     <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
   </joint>
-  <actuator name="joint_link0_link1_actr">
+  <actuator name="joint1_actr">
+    <!-- <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface> -->
     <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
     <mechanicalReduction>1</mechanicalReduction>
   </actuator>
 </transmission>
 
-<transmission name="joint_link1_link2_tran">
+<transmission name="joint2_tran">
   <type>transmission_interface/SimpleTransmission</type>
-  <joint name="joint_link1_link2">
+  <joint name="joint2">
+    <!-- <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface> -->
     <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
   </joint>
-  <actuator name="joint_link1_link2_actr">
+  <actuator name="joint2_actr">
+    <!-- <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface> -->
     <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
     <mechanicalReduction>1</mechanicalReduction>
   </actuator>
 </transmission>
 
-<transmission name="joint_link2_link3_tran">
+<transmission name="joint3_tran">
   <type>transmission_interface/SimpleTransmission</type>
-  <joint name="joint_link2_link3">
+  <joint name="joint3">
+    <!-- <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface> -->
     <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
   </joint>
-  <actuator name="joint_link2_link3_actr">
+  <actuator name="joint3_actr">
+    <!-- <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface> -->
     <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
     <mechanicalReduction>1</mechanicalReduction>
   </actuator>
 </transmission>
 
-<transmission name="joint_link3_link4_tran">
+<transmission name="joint4_tran">
   <type>transmission_interface/SimpleTransmission</type>
-  <joint name="joint_link3_link4">
+  <joint name="joint4">
+    <!-- <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface> -->
     <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
   </joint>
-  <actuator name="joint_link3_link4_actr">
+  <actuator name="joint4_actr">
+    <!-- <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface> -->
     <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
     <mechanicalReduction>1</mechanicalReduction>
   </actuator>
 </transmission>
 
-<transmission name="joint_link4_link5_tran">
+<transmission name="joint5_tran">
   <type>transmission_interface/SimpleTransmission</type>
-  <joint name="joint_link4_link5">
+  <joint name="joint5">
+    <!-- <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface> -->
     <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
   </joint>
-  <actuator name="joint_link4_link5_actr">
+  <actuator name="joint5_actr">
+    <!-- <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface> -->
     <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
     <mechanicalReduction>1</mechanicalReduction>
   </actuator>
 </transmission>
 
-<transmission name="joint_link5_link6_tran">
+<transmission name="joint6_tran">
   <type>transmission_interface/SimpleTransmission</type>
-  <joint name="joint_link5_link6">
+  <joint name="joint6">
+    <!-- <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface> -->
     <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
   </joint>
-  <actuator name="joint_link5_link6_actr">
+  <actuator name="joint6_actr">
+    <!-- <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface> -->
     <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
     <mechanicalReduction>1</mechanicalReduction>
   </actuator>
 </transmission>
 
-<transmission name="joint_frame_Lpad_tran">
+<!-- ======================================================================================= -->
+
+<!-- EOAT -->
+
+<transmission name="joint8_tran">
   <type>transmission_interface/SimpleTransmission</type>
-  <joint name="joint_frame_Lpad">
+  <joint name="joint8">
+    <!-- <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface> -->
     <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
   </joint>
-  <actuator name="joint_frame_Lpad_actr">
+  <actuator name="joint8_actr">
+    <!-- <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface> -->
     <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
     <mechanicalReduction>1</mechanicalReduction>
   </actuator>
 </transmission>
 
-<transmission name="joint_Lpad_lifter_tran">
+<transmission name="joint9_tran">
   <type>transmission_interface/SimpleTransmission</type>
-  <joint name="joint_Lpad_lifter">
+  <joint name="joint9">
+    <!-- <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface> -->
     <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
   </joint>
-  <actuator name="joint_Lpad_lifter_actr">
+  <actuator name="joint9_actr">
+    <!-- <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface> -->
     <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
     <mechanicalReduction>1</mechanicalReduction>
   </actuator>
 </transmission>
 
-<transmission name="joint_frame_Slifter_tran">
+<transmission name="joint10_tran">
   <type>transmission_interface/SimpleTransmission</type>
-  <joint name="joint_frame_Slifter">
+  <joint name="joint10">
+    <!-- <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface> -->
     <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
   </joint>
-  <actuator name="joint_frame_Slifter_actr">
+  <actuator name="joint10_actr">
+    <!-- <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface> -->
     <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
     <mechanicalReduction>1</mechanicalReduction>
   </actuator>
 </transmission>
 
-<transmission name="joint_Slifter_Spad_tran">
+
+
+<!-- <transmission name="joint11_tran">
   <type>transmission_interface/SimpleTransmission</type>
-  <joint name="joint_Slifter_Spad">
-    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  <joint name="joint11"> -->
+
+    <!-- <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface> -->
+
+    <!-- <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
   </joint>
-  <actuator name="joint_Slifter_Spad_actr">
-    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  <actuator name="joint11_actr"> -->
+
+    <!-- <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface> -->
+    
+    <!-- <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
     <mechanicalReduction>1</mechanicalReduction>
   </actuator>
-</transmission>
+</transmission> -->
 
 </robot>

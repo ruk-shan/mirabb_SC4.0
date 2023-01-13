@@ -1,0 +1,559 @@
+<?xml version="1.0" ?>
+<robot name="mirabb_rev2" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find mirabb_rev2_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find mirabb_rev2_controller)/config/mirabb_rev2.trans" />
+
+<xacro:include filename="$(find mirabb_rev2_gazebo)/gazebo/mirabb_rev2_materials.gazebo" />
+<xacro:include filename="$(find mirabb_rev2_gazebo)/gazebo/mirabb_rev2_physics.gazebo" />
+<xacro:include filename="$(find mirabb_rev2_gazebo)/gazebo/mirabb_rev2_plugins.gazebo" />
+
+
+<!-- ======================================== links ========================================= -->
+
+<link name="base_link">
+  <inertial>
+    <origin xyz="-0.005052905851329634 0.0009237993595675954 0.19509462972372268" rpy="0 0 0"/>
+    <mass value="731.1841440414972"/>
+    <inertia ixx="44.903938" iyy="101.343685" izz="136.36036" ixy="-0.104753" iyz="0.079845" ixz="0.049526"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mirabb_rev2_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="opaque636363"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mirabb_rev2_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="battery_pack_1">
+  <inertial>
+    <origin xyz="0.3382791205796017 -0.15021271924052587 0.32461061393101465" rpy="0 0 0"/>
+    <mass value="110.65048122246903"/>
+    <inertia ixx="47.958217" iyy="82.770779" izz="52.993229" ixy="0.0" iyz="0.03336" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.671632 -0.456901 -0.333225" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mirabb_rev2_description/meshes/battery_pack_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="steel_satin"/>
+  </visual>
+  <collision>
+    <origin xyz="0.671632 -0.456901 -0.333225" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mirabb_rev2_description/meshes/battery_pack_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="IRC5_1">
+  <inertial>
+    <origin xyz="0.34747421633122205 0.2748966687089476 0.38207835577474003" rpy="0 0 0"/>
+    <mass value="165.9374645529373"/>
+    <inertia ixx="83.575164" iyy="108.519954" izz="110.829977" ixy="0.317379" iyz="3.527308" ixz="-0.083214"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.671632 0.408099 -0.333225" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mirabb_rev2_description/meshes/IRC5_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="opaque192196191"/>
+  </visual>
+  <collision>
+    <origin xyz="0.671632 0.408099 -0.333225" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mirabb_rev2_description/meshes/IRC5_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="rear_left_caster_1">
+  <inertial>
+    <origin xyz="1.2700628260198243e-07 0.040000141287039714 -1.4280461667348643e-08" rpy="0 0 0"/>
+    <mass value="3.28635082694758"/>
+    <inertia ixx="0.00407" iyy="0.004808" izz="0.00407" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.583132 0.362599 -0.058225" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mirabb_rev2_description/meshes/rear_left_caster_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="opaque25500_1"/>
+  </visual>
+  <collision>
+    <origin xyz="0.583132 0.362599 -0.058225" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mirabb_rev2_description/meshes/rear_left_caster_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="rear_right_caster_1">
+  <inertial>
+    <origin xyz="1.2700613527538707e-07 -0.03999985871297529 -1.4280526317023146e-08" rpy="0 0 0"/>
+    <mass value="2.834030293976285"/>
+    <inertia ixx="0.00334" iyy="0.003822" izz="0.00334" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.583132 -0.366401 -0.058225" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mirabb_rev2_description/meshes/rear_right_caster_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="opaque25500_1"/>
+  </visual>
+  <collision>
+    <origin xyz="0.583132 -0.366401 -0.058225" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mirabb_rev2_description/meshes/rear_right_caster_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="front_right_caster_1">
+  <inertial>
+    <origin xyz="1.520973808566417e-07 -0.03999985871272993 -2.5129112466576453e-07" rpy="0 0 0"/>
+    <mass value="3.2863508269475643"/>
+    <inertia ixx="0.00407" iyy="0.004808" izz="0.00407" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.496877 -0.366401 -0.058244" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mirabb_rev2_description/meshes/front_right_caster_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="opaque25500_1"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.496877 -0.366401 -0.058244" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mirabb_rev2_description/meshes/front_right_caster_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="front_left_caster_1">
+  <inertial>
+    <origin xyz="1.5209757575629368e-07 0.040000141287288626 -2.5129119475553185e-07" rpy="0 0 0"/>
+    <mass value="3.2863508269475803"/>
+    <inertia ixx="0.00407" iyy="0.004808" izz="0.00407" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.496877 0.362599 -0.058244" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mirabb_rev2_description/meshes/front_left_caster_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="opaque25500_1"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.496877 0.362599 -0.058244" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mirabb_rev2_description/meshes/front_left_caster_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="right_drive_wheel_1">
+  <inertial>
+    <origin xyz="3.9465326454784025e-07 -0.02500185564569668 -6.506273999187795e-06" rpy="0 0 0"/>
+    <mass value="5.294052840904851"/>
+    <inertia ixx="0.021658" iyy="0.041149" izz="0.021656" ixy="0.0" iyz="-1e-06" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.003368 -0.356991 -0.108225" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mirabb_rev2_description/meshes/right_drive_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="opaque25500_1_1"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.003368 -0.356991 -0.108225" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mirabb_rev2_description/meshes/right_drive_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="left_drive_wheel_1">
+  <inertial>
+    <origin xyz="-1.4064040030226793e-07 0.02500213822004227 -6.506273913825522e-06" rpy="0 0 0"/>
+    <mass value="5.294052840904075"/>
+    <inertia ixx="0.021658" iyy="0.041149" izz="0.021656" ixy="0.0" iyz="1e-06" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.003368 0.355189 -0.108225" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mirabb_rev2_description/meshes/left_drive_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="opaque25500_1_1"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.003368 0.355189 -0.108225" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mirabb_rev2_description/meshes/left_drive_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="rear_lidar_1">
+  <inertial>
+    <origin xyz="0.0016905374305226095 0.00025113064620507775 -0.007627880367609197" rpy="0 0 0"/>
+    <mass value="0.6451222059189863"/>
+    <inertia ixx="0.000317" iyy="0.000277" izz="0.00057" ixy="6e-06" iyz="0.0" ixz="1e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.586482 0.368099 -0.203225" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mirabb_rev2_description/meshes/rear_lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="opaque25500"/>
+  </visual>
+  <collision>
+    <origin xyz="0.586482 0.368099 -0.203225" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mirabb_rev2_description/meshes/rear_lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="front_lidar_1">
+  <inertial>
+    <origin xyz="0.0002508766141638974 -0.0016905088880322938 -0.007627880367266859" rpy="0 0 0"/>
+    <mass value="0.645122205919022"/>
+    <inertia ixx="0.000277" iyy="0.000317" izz="0.00057" ixy="-6e-06" iyz="-1e-06" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.593218 -0.371901 -0.203225" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mirabb_rev2_description/meshes/front_lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="opaque25500"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.593218 -0.371901 -0.203225" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mirabb_rev2_description/meshes/front_lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+
+<link name="abb_link_0_1">
+  <inertial>
+    <origin xyz="-0.09119342807389941 0.0003632766664137069 0.061964520523223876" rpy="0 0 0"/>
+    <mass value="2.3771328449710649"/>
+    <inertia ixx="3.322456" iyy="6.746895" izz="9.112071" ixy="0.030784" iyz="0.001141" ixz="0.455197"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.45 -0.0 -0.323225" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mirabb_rev2_description/meshes/abb_link_0_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="opaque215215215"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.45 -0.0 -0.323225" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mirabb_rev2_description/meshes/abb_link_0_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="abb_link_1_1">
+  <inertial>
+    <origin xyz="0.07703822885743022 0.024690140056604287 0.2406984296125637" rpy="0 0 0"/>
+    <mass value="3.329466873877731"/>
+    <inertia ixx="8.732818" iyy="11.378245" izz="9.105966" ixy="-0.760548" iyz="-0.812185" ixz="-2.349545"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.45 -0.0 -0.462225" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mirabb_rev2_description/meshes/abb_link_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="opaque215215215"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.45 -0.0 -0.462225" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mirabb_rev2_description/meshes/abb_link_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="abb_link_2_1">
+  <inertial>
+    <origin xyz="1.001368435393779e-06 -0.047559072898264526 0.4878264798203047" rpy="0 0 0"/>
+    <mass value="2.690302108058418"/>
+    <inertia ixx="29.355719" iyy="30.105846" izz="1.557161" ixy="-0.000106" iyz="0.846949" ixz="0.001275"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.625 0.1225 -0.797725" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mirabb_rev2_description/meshes/abb_link_2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="opaque215215215"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.625 0.1225 -0.797725" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mirabb_rev2_description/meshes/abb_link_2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="abb_link_3_1">
+  <inertial>
+    <origin xyz="0.0407124699633189 0.19846613138023458 0.1187619783970777" rpy="0 0 0"/>
+    <mass value="0.04971415915851"/>
+    <inertia ixx="8.893897" iyy="10.88791" izz="8.946802" ixy="0.577245" iyz="-0.110794" ixz="-0.921456"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.625 0.1492 -1.892725" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mirabb_rev2_description/meshes/abb_link_3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="opaque215215215"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.625 0.1492 -1.892725" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mirabb_rev2_description/meshes/abb_link_3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="abb_link_4_1">
+  <inertial>
+    <origin xyz="0.4981656538583473 0.0008083116472092178 0.00023536472418461685" rpy="0 0 0"/>
+    <mass value="0.07381747991609211"/>
+    <inertia ixx="0.158364" iyy="6.956835" izz="6.981902" ixy="-0.02267" iyz="0.000119" ixz="-0.003699"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.9651 -0.0 -2.067725" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mirabb_rev2_description/meshes/abb_link_4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="opaque215215215"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.9651 -0.0 -2.067725" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mirabb_rev2_description/meshes/abb_link_4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="abb_link_5_1">
+  <inertial>
+    <origin xyz="0.0002420230798942935 0.020477376265846853 0.0008926528509860532" rpy="0 0 0"/>
+    <mass value="0.002908310329961815"/>
+    <inertia ixx="0.002454" iyy="0.004276" izz="0.002692" ixy="2e-06" iyz="-2e-06" ixz="4.7e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="-1.8555 0.0205 -2.067725" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mirabb_rev2_description/meshes/abb_link_5_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="opaque225225225"/>
+  </visual>
+  <collision>
+    <origin xyz="-1.8555 0.0205 -2.067725" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mirabb_rev2_description/meshes/abb_link_5_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="abb_link_6_1">
+  <inertial>
+    <origin xyz="0.021308530149013682 1.8171855728165108e-09 -0.00018066012267503595" rpy="0 0 0"/>
+    <mass value="0.00378252209682352"/>
+    <inertia ixx="0.000148" iyy="0.000107" izz="0.000109" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-1.9065 -0.0 -2.067725" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mirabb_rev2_description/meshes/abb_link_6_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="opaque128128128"/>
+  </visual>
+  <collision>
+    <origin xyz="-1.9065 -0.0 -2.067725" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mirabb_rev2_description/meshes/abb_link_6_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<!-- camera -->
+  <link name="camera">
+    <collision>
+      <origin xyz="0.050 0.10 0.050" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.1 0.200 0.100"/>
+      </geometry>
+    </collision>
+
+    <visual>
+      <origin xyz="0.050 0.10 0.050" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.1 0.200 0.100"/>
+      </geometry>
+      <material name="opaque25500"/>
+    </visual>
+
+    <inertial>
+      <origin xyz="0.050 0.10 0.050" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+        ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0"/>
+    </inertial>
+  </link>
+
+<!-- ======================================== ===== ========================================= -->
+
+<!-- joints -->
+
+<joint name="joint_battery_to_base" type="fixed">
+  <origin xyz="-0.671632 0.456901 0.333225" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="battery_pack_1"/>
+</joint>
+
+<joint name="joint_IRC5_to_base" type="fixed">
+  <origin xyz="-0.671632 -0.408099 0.333225" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="IRC5_1"/>
+</joint>
+
+<joint name="joint_rear_left_caster_to_base" type="fixed">
+  <origin xyz="-0.583132 -0.362599 0.058225" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="rear_left_caster_1"/>
+</joint>
+
+<joint name="joint_rear_right_caster_to_base" type="fixed">
+  <origin xyz="-0.583132 0.366401 0.058225" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="rear_right_caster_1"/>
+</joint>
+
+<joint name="joint_front_right_caster_to_base (1)" type="fixed">
+  <origin xyz="0.496877 0.366401 0.058244" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="front_right_caster_1"/>
+</joint>
+
+<joint name="joint_front_left_caster_to_base" type="fixed">
+  <origin xyz="0.496877 -0.362599 0.058244" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="front_left_caster_1"/>
+</joint>
+
+<joint name="joint_right_drive_wheel_to_base" type="continuous">
+  <origin xyz="0.003368 0.356991 0.108225" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="right_drive_wheel_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="joint_left_drive_wheel_to_base" type="continuous">
+  <origin xyz="0.003368 -0.355189 0.108225" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="left_drive_wheel_1"/>
+  <axis xyz="-0.0 1.0 -0.0"/>
+</joint>
+
+<joint name="joint_front_lidar_to_base" type="fixed">
+  <origin xyz="-0.586482 -0.368099 0.203225" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="rear_lidar_1"/>
+</joint>
+
+<joint name="joint_rear_lidar_to_base" type="fixed">
+  <origin xyz="0.593218 0.371901 0.203225" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="front_lidar_1"/>
+</joint>
+
+<joint name="joint_abb_base_0_to_base" type="fixed">
+  <origin xyz="0.45 0.0 0.323225" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="abb_link_0_1"/>
+</joint>
+
+<joint name="joint_abb_1_to_abb_0" type="continuous">
+<!-- <joint name="joint_abb_1_to_abb_0" type="fixed"> -->
+  <origin xyz="0.0 0.0 0.139" rpy="0 0 0"/>
+  <parent link="abb_link_0_1"/>
+  <child link="abb_link_1_1"/>
+  <axis xyz="-0.0 0.0 1.0"/>
+  <limit effort="100" lower="-3.141" upper="3.141" velocity="10"/>
+  <!-- <limit effort="0" lower="-3.141" upper="3.141" velocity="3.054"/> -->
+</joint>
+
+<joint name="joint_abb_2_to_abb_1" type="continuous">
+<!-- <joint name="joint_abb_2_to_abb_1" type="fixed"> -->
+  <origin xyz="0.175 -0.1225 0.3355" rpy="0 0 0"/>
+  <parent link="abb_link_1_1"/>
+  <child link="abb_link_2_1"/>
+  <axis xyz="-0.0 -1.0 0.0"/>
+  <limit effort="100" lower="-1.570" upper="2.617" velocity="10"/>
+  <!-- <limit effort="0" lower="-1.570" upper="2.617" velocity="3.054"/> -->
+</joint>
+
+<joint name="joint_abb_3_to_abb_2" type="continuous">
+<!-- <joint name="joint_abb_3_to_abb_2" type="fixed"> -->
+  <origin xyz="0.0 -0.0267 1.095" rpy="0 0 0"/>
+  <parent link="abb_link_2_1"/>
+  <child link="abb_link_3_1"/>
+  <axis xyz="0.0 1.0 -0.0"/>
+  <limit effort="100" lower="-3.141" upper="1.308" velocity="10"/>
+  <!-- <limit effort="0" lower="-3.141" upper="1.308" velocity="3.054"/> -->
+</joint>
+
+<joint name="joint_abb_4_to_abb_3" type="continuous">
+<!-- <joint name="joint_abb_4_to_abb_3" type="fixed"> -->
+  <origin xyz="0.3401 0.1492 0.175" rpy="0 0 0"/>
+  <parent link="abb_link_3_1"/>
+  <child link="abb_link_4_1"/>
+  <axis xyz="1.0 0.0 0.0"/>
+  <limit effort="100" lower="-6.981" upper="6.981" velocity="10"/> 
+  <!-- <limit effort="0" lower="-6.981" upper="6.981" velocity="4.363"/> -->
+</joint>
+
+<joint name="joint_abb_5_to_abb_4" type="continuous">
+<!-- <joint name="joint_abb_5_to_abb_4" type="fixed"> -->
+  <origin xyz="0.8904 -0.0205 0.0" rpy="0 0 0"/>
+  <parent link="abb_link_4_1"/>
+  <child link="abb_link_5_1"/>
+  <axis xyz="0.0 1.0 -0.0"/>
+  <limit effort="100" lower="-2.181" upper="2.094" velocity="10"/>
+  <!-- <limit effort="0" lower="-2.181" upper="2.094" velocity="4.363"/> -->
+</joint>
+
+<joint name="joint_abb_6_to_abb_5" type="continuous">
+<!-- <joint name="joint_abb_6_to_abb_5" type="fixed"> -->
+  <origin xyz="0.051 0.0205 0.0" rpy="0 0 0"/>
+  <parent link="abb_link_5_1"/>
+  <child link="abb_link_6_1"/>
+  <axis xyz="1.0 0.0 0.0"/>
+  <limit effort="100" lower="-6.981" upper="6.981" velocity="10"/>
+  <!-- <limit effort="0" lower="-6.981" upper="6.981" velocity="6.283"/> -->
+</joint> 
+
+<!-- camera link -->
+<joint name="camera_joint" type="fixed">
+  <origin xyz="1 1 1" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="camera"/>
+</joint>
+
+</robot>

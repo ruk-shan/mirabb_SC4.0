@@ -1,13 +1,11 @@
-# parameters for Gazebo ROS control plugin
-gazebo_ros_control/pid_gains:
-
-    joint_link0_link1: {p: 100.0, i: 0.01, d: 10.0}
-    joint_link1_link2: {p: 100.0, i: 0.01, d: 10.0}
-    joint_link2_link3: {p: 100.0, i: 0.01, d: 10.0}
-    joint_link3_link4: {p: 100.0, i: 0.01, d: 10.0}
-    joint_link4_link5: {p: 100.0, i: 0.01, d: 10.0}
-    joint_link5_link6: {p: 100.0, i: 0.01, d: 10.0}
-    joint_frame_Lpad: {p: 100.0, i: 0.01, d: 10.0}
-    joint_Lpad_lifter: {p: 100.0, i: 0.01, d: 10.0}
-    joint_frame_Slifter: {p: 100.0, i: 0.01, d: 10.0}
-    joint_Slifter_Spad: {p: 100.0, i: 0.01, d: 10.0}
+mirabb/gazebo_ros_control/pid_gains:
+  joint1: {p: 1000.0, i: 0, d: 0}
+  joint2: {p: 1000.0, i: 0, d: 0}
+  joint3: {p: 1000.0, i: 0, d: 0}
+  joint4: {p: 1000.0, i: 0, d: 0}
+  joint5: {p: 1000.0, i: 0, d: 0}
+  joint6: {p: 1000.0, i: 0, d: 0}
+  joint8: {p: 1000.0, i: 0, d: 0}
+  joint9: {p: 1000.0, i: 0, d: 0}
+  joint10: {p: 1000.0, i: 0, d: 0}
+  joint11: {p: 1000.0, i: 0, d: 0}

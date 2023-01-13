@@ -3,8 +3,15 @@
 
 <xacro:property name="body_color" value="Gazebo/Silver" />
 
-<gazebo>
+<!-- <gazebo>
   <plugin name="control" filename="libgazebo_ros_control.so"/>
+</gazebo> -->
+
+<gazebo>
+  <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+    <robotNamespace>/mirabb</robotNamespace>
+    <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+  </plugin>
 </gazebo>
 
 <gazebo reference="base_link">
@@ -57,88 +64,88 @@
   <selfCollide>true</selfCollide>
 </gazebo>
 
-<gazebo reference="abb_link0__1___1__1">
+<gazebo reference="link0_1">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
-<gazebo reference="abb_link1__1___1__1">
+<gazebo reference="link1_1">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
-<gazebo reference="abb_link2__1___1__1">
+<gazebo reference="link2_1">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
-<gazebo reference="abb_link3__1___1__1">
+<gazebo reference="link3_1">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
-<gazebo reference="abb_link4__1___1__1">
+<gazebo reference="link4_1">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
-<gazebo reference="abb_link5__1___1__1">
+<gazebo reference="link5_1">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
-<gazebo reference="abb_link6__1___1__1">
+<gazebo reference="link6_1">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
-<gazebo reference="eoat_FRAME__1__1">
+<gazebo reference="link7_1">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
-<gazebo reference="eoat_LARGE_PAD__1__1">
+<gazebo reference="link11_1">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <selfCollide>true</selfCollide>
+  <selfCollide>false</selfCollide>
 </gazebo>
 
-<gazebo reference="eoat_LARGE_PAD_LIFTER__1__1">
+<gazebo reference="link10_1">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <selfCollide>true</selfCollide>
+  <selfCollide>false</selfCollide>
 </gazebo>
 
-<gazebo reference="eoat_SMALL_PAD_LIFTER__1__1">
+<gazebo reference="link9_1">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <selfCollide>true</selfCollide>
+  <selfCollide>false</selfCollide>
 </gazebo>
 
-<gazebo reference="eoat_SMALL_PAD__1__1">
+<gazebo reference="link8_1">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
-  <selfCollide>true</selfCollide>
+  <selfCollide>false</selfCollide>
 </gazebo>
 
 </robot>
