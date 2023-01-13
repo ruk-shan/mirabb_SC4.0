@@ -1,0 +1,70 @@
+<?xml version="1.0" ?>
+<robot name="ur10" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+<transmission name="urJ_01_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="urJ_01">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="urJ_01_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="urJ_02_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="urJ_02">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="urJ_02_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="urJ_03_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="urJ_03">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="urJ_03_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="urJ_04_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="urJ_04">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="urJ_04_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="urJ_05_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="urJ_05">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="urJ_05_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="urJ_06_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="urJ_06">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="urJ_06_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+</robot>

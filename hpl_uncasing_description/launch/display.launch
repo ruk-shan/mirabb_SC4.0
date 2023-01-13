@@ -1,0 +1,15 @@
+<launch>
+  <arg name="model" default="$(find hpl_uncasing_description)/urdf/hpl_uncasing.xacro"/>
+  <arg name="gui" default="true"/>
+  <arg name="rvizconfig" default="$(find hpl_uncasing_description)/launch/urdf.rviz"/>
+  <param name="robot_description" command="$(find xacro)/xacro $(arg model)"/>
+  <param name="use_gui" value="$(arg gui)"/>
+  <!-- <node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui"/> -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+  <!-- <node pkg="hpl_uncasing_description" name="ModbusReader_MQTTPublisher" type="ModbusReader_MQTTPublisher.py"> -->
+  <node pkg="hpl_uncasing_description" name="ModbusReader_MQTTPublisher" type="ModbusReader_MQTTPublisher.py" output="screen"/>
+  <node pkg="hpl_uncasing_description" name="hpl_joint_publisher" type="hpl_joint_publisher.py" output="screen"/>
+  <node name="rviz" pkg="rviz" args="-d $(arg rvizconfig)" type="rviz" required="true"/>
+
+</launch>
+

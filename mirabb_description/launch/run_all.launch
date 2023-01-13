@@ -5,6 +5,7 @@
     <include file="$(find mirabb_description)/launch/controller.launch" />
     <include file="$(find mirabb_description)/launch/display.launch" />
     <!-- <include file="$(find mirabb_moveit_config)/launch/demo.launch" />   -->
+    <node name="rqt_joint_trajectory_controller" pkg="rqt_joint_trajectory_controller" type="rqt_joint_trajectory_controller"/>
 
 </launch>    
 

@@ -1,0 +1,495 @@
+<?xml version="1.0" ?>
+<robot name="ur10" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find ur10_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find ur10_description)/urdf/ur10.trans" />
+<xacro:include filename="$(find ur10_description)/urdf/ur10.gazebo" />
+<link name="ur_link_0">
+  <inertial>
+    <origin xyz="0.1341226466253668 0.3620520731326024 0.8841257330902839" rpy="0 0 0"/>
+    <mass value="5.566476447769717"/>
+    <inertia ixx="0.009212" iyy="0.009" izz="0.016855" ixy="1.8e-05" iyz="3e-06" ixz="1e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ur10_description/meshes/ur_link_0.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="paint_metallic_silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ur10_description/meshes/ur_link_0.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="UR_lower_arm_1">
+  <inertial>
+    <origin xyz="4.317313677670853e-07 1.7232844956582838e-07 0.2227588556559017" rpy="0 0 0"/>
+    <mass value="20.947995687617777"/>
+    <inertia ixx="0.377091" iyy="0.377091" izz="0.019925" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.130077 -0.410041 -1.672884" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ur10_description/meshes/UR_lower_arm_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="paint_metallic_silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.130077 -0.410041 -1.672884" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ur10_description/meshes/UR_lower_arm_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="ur_link_5_1">
+  <inertial>
+    <origin xyz="-0.001073087505010395 0.012763860701824892 0.04565426913935111" rpy="0 0 0"/>
+    <mass value="5.411401897703355"/>
+    <inertia ixx="0.007508" iyy="0.006487" izz="0.006906" ixy="8.7e-05" iyz="-0.000887" ixz="7.5e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.130077 -0.410041 -2.124184" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ur10_description/meshes/ur_link_5_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="paint_metallic_dark_grey"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.130077 -0.410041 -2.124184" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ur10_description/meshes/ur_link_5_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="ur_cap_1_1">
+  <inertial>
+    <origin xyz="-0.005250053634786894 0.06532740228730938 0.04213330578567431" rpy="0 0 0"/>
+    <mass value="0.7960608485191857"/>
+    <inertia ixx="0.001489" iyy="0.001554" izz="0.002747" ixy="-2.1e-05" iyz="-0.000313" ixz="2.6e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.140326 -0.288246 -1.024555" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ur10_description/meshes/ur_cap_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="paint_metallic_blue_1"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.140326 -0.288246 -1.024555" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ur10_description/meshes/ur_cap_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="ur_cap_2_1">
+  <inertial>
+    <origin xyz="-0.0036973045358098255 0.04196674224629615 0.0655629609774322" rpy="0 0 0"/>
+    <mass value="0.7965337066574627"/>
+    <inertia ixx="0.001498" iyy="0.002756" izz="0.001569" ixy="-0.000106" iyz="-0.000312" ixz="3.8e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.116773 -0.568159 -0.919653" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ur10_description/meshes/ur_cap_2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="paint_metallic_blue_1"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.116773 -0.568159 -0.919653" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ur10_description/meshes/ur_cap_2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="ur_cap_3_1">
+  <inertial>
+    <origin xyz="0.0007350588477628428 -0.009552481015079328 0.06565451162358271" rpy="0 0 0"/>
+    <mass value="0.5319012872487549"/>
+    <inertia ixx="0.000666" iyy="0.001153" izz="0.000689" ixy="-3.9e-05" iyz="0.000167" ixz="-2.1e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.114345 -0.597015 -1.548659" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ur10_description/meshes/ur_cap_3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="paint_metallic_blue_1"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.114345 -0.597015 -1.548659" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ur10_description/meshes/ur_cap_3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="ur_cap_4_1">
+  <inertial>
+    <origin xyz="-0.0008758266693977002 0.00953804276962883 -0.06564453506018442" rpy="0 0 0"/>
+    <mass value="0.5320154936097464"/>
+    <inertia ixx="0.000666" iyy="0.001151" izz="0.000689" ixy="-4.4e-05" iyz="0.000168" ixz="-7e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.13519 -0.349279 -1.663899" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ur10_description/meshes/ur_cap_4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="paint_metallic_blue_1"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.13519 -0.349279 -1.663899" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ur10_description/meshes/ur_cap_4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="ur_cap_5_1">
+  <inertial>
+    <origin xyz="-0.0005447441402708919 0.003261761814048969 0.0502154502624097" rpy="0 0 0"/>
+    <mass value="0.3135668333291735"/>
+    <inertia ixx="0.000233" iyy="0.000407" izz="0.000243" ixy="-1.4e-05" iyz="-5.2e-05" ixz="3e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.134185 -0.361221 -2.134621" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ur10_description/meshes/ur_cap_5_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="paint_metallic_blue_1"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.134185 -0.361221 -2.134621" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ur10_description/meshes/ur_cap_5_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="ur_cap_6_1">
+  <inertial>
+    <origin xyz="-0.003945255864271566 0.05006333041435396 0.0032931712284427483" rpy="0 0 0"/>
+    <mass value="0.31354887025816547"/>
+    <inertia ixx="0.000232" iyy="0.000245" izz="0.000406" ixy="-0.0" iyz="-5.2e-05" ixz="4e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.124029 -0.481923 -2.129192" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ur10_description/meshes/ur_cap_6_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="paint_metallic_blue_1"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.124029 -0.481923 -2.129192" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ur10_description/meshes/ur_cap_6_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="ur_cap_7_1">
+  <inertial>
+    <origin xyz="-0.0005446899626228158 0.003260900664835864 0.050215003005548375" rpy="0 0 0"/>
+    <mass value="0.31356682475291625"/>
+    <inertia ixx="0.000233" iyy="0.000407" izz="0.000243" ixy="-1.4e-05" iyz="-5.2e-05" ixz="3e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.124484 -0.476513 -2.25032" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ur10_description/meshes/ur_cap_7_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="paint_metallic_blue_1"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.124484 -0.476513 -2.25032" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ur10_description/meshes/ur_cap_7_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="ur_link_2_1">
+  <inertial>
+    <origin xyz="-0.0010347693051333817 0.012304554337659146 0.07575245056194846" rpy="0 0 0"/>
+    <mass value="23.353648855017656"/>
+    <inertia ixx="0.082856" iyy="0.077263" izz="0.076406" ixy="0.000474" iyz="-0.007854" ixz="0.000661"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.134118 -0.36202 -0.903687" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ur10_description/meshes/ur_link_2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="paint_metallic_dark_grey"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.134118 -0.36202 -0.903687" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ur10_description/meshes/ur_link_2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="ur_link_3_1">
+  <inertial>
+    <origin xyz="-0.006351815030389729 0.0754855445186437 0.012348043780189055" rpy="0 0 0"/>
+    <mass value="23.35359382780191"/>
+    <inertia ixx="0.082847" iyy="0.076446" izz="0.077227" ixy="0.000543" iyz="-0.007852" ixz="0.000662"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.126907 -0.447717 -0.993687" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ur10_description/meshes/ur_link_3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="paint_metallic_dark_grey"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.126907 -0.447717 -0.993687" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ur10_description/meshes/ur_link_3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="ur_link_4_1">
+  <inertial>
+    <origin xyz="0.0046000558011485004 -0.05467260918045497 0.010755509718141987" rpy="0 0 0"/>
+    <mass value="10.042428655221093"/>
+    <inertia ixx="0.020153" iyy="0.019643" izz="0.018827" ixy="4.3e-05" iyz="0.002496" ixz="-0.00021"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.124367 -0.477911 -1.606586" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ur10_description/meshes/ur_link_4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="paint_metallic_dark_grey"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.124367 -0.477911 -1.606586" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ur10_description/meshes/ur_link_4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="ur_link_6_1">
+  <inertial>
+    <origin xyz="-0.0038279257825328122 0.04549234336859598 0.012809863080236905" rpy="0 0 0"/>
+    <mass value="5.411399448040446"/>
+    <inertia ixx="0.007508" iyy="0.006899" izz="0.006486" ixy="5.2e-05" iyz="-0.000886" ixz="7.5e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.124904 -0.471523 -2.178184" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ur10_description/meshes/ur_link_6_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="paint_metallic_dark_grey"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.124904 -0.471523 -2.178184" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ur10_description/meshes/ur_link_6_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="ur_link_7_1">
+  <inertial>
+    <origin xyz="-0.001073047212299158 0.012764159562608235 0.045653982236020685" rpy="0 0 0"/>
+    <mass value="5.411401897703238"/>
+    <inertia ixx="0.007508" iyy="0.006486" izz="0.006906" ixy="8.7e-05" iyz="-0.000887" ixz="7.5e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.120376 -0.525332 -2.239883" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ur10_description/meshes/ur_link_7_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="paint_metallic_dark_grey"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.120376 -0.525332 -2.239883" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ur10_description/meshes/ur_link_7_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="ur_link_8_1">
+  <inertial>
+    <origin xyz="-0.001092702682079713 0.012988995566657446 -0.0009942430933675972" rpy="0 0 0"/>
+    <mass value="1.2485350731214173"/>
+    <inertia ixx="0.000645" iyy="0.001169" izz="0.000689" ixy="-4.4e-05" iyz="4e-06" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.115203 -0.586814 -2.293883" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ur10_description/meshes/ur_link_8_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="paint_metallic_silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.115203 -0.586814 -2.293883" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ur10_description/meshes/ur_link_8_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="UR_upper_arm_1">
+  <inertial>
+    <origin xyz="3.9698376849695016e-08 4.021238427798224e-07 0.22693848638081993" rpy="0 0 0"/>
+    <mass value="33.79520671070889"/>
+    <inertia ixx="0.644929" iyy="0.644929" izz="0.050959" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.119361 -0.5374 -1.079687" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ur10_description/meshes/UR_upper_arm_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="aluminum_bead_blasted"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.119361 -0.5374 -1.079687" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ur10_description/meshes/UR_upper_arm_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="ur_link_9_1">
+  <inertial>
+    <origin xyz="0.0008308307182482988 -0.009875841870277569 0.05468642181193806" rpy="0 0 0"/>
+    <mass value="9.24308808230197"/>
+    <inertia ixx="0.017239" iyy="0.018165" izz="0.01601" ixy="-7.8e-05" iyz="0.002097" ixz="-0.000176"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.119361 -0.5374 -1.540287" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ur10_description/meshes/ur_link_9_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="paint_metallic_dark_grey"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.119361 -0.5374 -1.540287" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ur10_description/meshes/ur_link_9_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="Rigid43" type="fixed">
+  <origin xyz="0.00571 -0.06787 0.066298" rpy="0 0 0"/>
+  <parent link="ur_link_4_1"/>
+  <child link="UR_lower_arm_1"/>
+</joint>
+
+<joint name="Rigid44" type="fixed">
+  <origin xyz="0.0 0.0 0.4513" rpy="0 0 0"/>
+  <parent link="UR_lower_arm_1"/>
+  <child link="ur_link_5_1"/>
+</joint>
+
+<joint name="Rigid48" type="fixed">
+  <origin xyz="0.006208 -0.073774 0.120868" rpy="0 0 0"/>
+  <parent link="ur_link_2_1"/>
+  <child link="ur_cap_1_1"/>
+</joint>
+
+<joint name="Rigid49" type="fixed">
+  <origin xyz="-0.010134 0.120442 -0.074034" rpy="0 0 0"/>
+  <parent link="ur_link_3_1"/>
+  <child link="ur_cap_2_1"/>
+</joint>
+
+<joint name="Rigid50" type="fixed">
+  <origin xyz="-0.005016 0.059615 0.008372" rpy="0 0 0"/>
+  <parent link="ur_link_9_1"/>
+  <child link="ur_cap_3_1"/>
+</joint>
+
+<joint name="Rigid51" type="fixed">
+  <origin xyz="0.010823 -0.128632 0.057313" rpy="0 0 0"/>
+  <parent link="ur_link_4_1"/>
+  <child link="ur_cap_4_1"/>
+</joint>
+
+<joint name="Rigid52" type="fixed">
+  <origin xyz="0.004108 -0.04882 0.010437" rpy="0 0 0"/>
+  <parent link="ur_link_5_1"/>
+  <child link="ur_cap_5_1"/>
+</joint>
+
+<joint name="Rigid53" type="fixed">
+  <origin xyz="-0.000875 0.0104 -0.048992" rpy="0 0 0"/>
+  <parent link="ur_link_6_1"/>
+  <child link="ur_cap_6_1"/>
+</joint>
+
+<joint name="Rigid54" type="fixed">
+  <origin xyz="0.004108 -0.048819 0.010437" rpy="0 0 0"/>
+  <parent link="ur_link_7_1"/>
+  <child link="ur_cap_7_1"/>
+</joint>
+
+<joint name="urJ_01" type="continuous">
+  <origin xyz="0.134118 0.36202 0.903687" rpy="0 0 0"/>
+  <parent link="ur_link_0"/>
+  <child link="ur_link_2_1"/>
+  <axis xyz="-0.0 0.0 1.0"/>
+</joint>
+
+<joint name="urJ_02" type="continuous">
+  <origin xyz="-0.007211 0.085697 0.09" rpy="0 0 0"/>
+  <parent link="ur_link_2_1"/>
+  <child link="ur_link_3_1"/>
+  <axis xyz="-0.083847 0.996479 -0.0"/>
+</joint>
+
+<joint name="urJ_03" type="continuous">
+  <origin xyz="0.005006 -0.059489 0.066299" rpy="0 0 0"/>
+  <parent link="ur_link_9_1"/>
+  <child link="ur_link_4_1"/>
+  <axis xyz="0.083847 -0.996479 0.0"/>
+</joint>
+
+<joint name="urJ_04" type="continuous">
+  <origin xyz="-0.005173 0.061482 0.054" rpy="0 0 0"/>
+  <parent link="ur_link_5_1"/>
+  <child link="ur_link_6_1"/>
+  <axis xyz="-0.083847 0.996479 -0.0"/>
+</joint>
+
+<joint name="urJ_05" type="continuous">
+  <origin xyz="-0.004528 0.053809 0.061699" rpy="0 0 0"/>
+  <parent link="ur_link_6_1"/>
+  <child link="ur_link_7_1"/>
+  <axis xyz="-0.0 0.0 1.0"/>
+</joint>
+
+<joint name="urJ_06" type="continuous">
+  <origin xyz="-0.005173 0.061482 0.054" rpy="0 0 0"/>
+  <parent link="ur_link_7_1"/>
+  <child link="ur_link_8_1"/>
+  <axis xyz="-0.083847 0.996479 -0.0"/>
+</joint>
+
+<joint name="Rigid68" type="fixed">
+  <origin xyz="-0.007546 0.089683 0.086" rpy="0 0 0"/>
+  <parent link="ur_link_3_1"/>
+  <child link="UR_upper_arm_1"/>
+</joint>
+
+<joint name="Rigid73" type="fixed">
+  <origin xyz="0.0 0.0 0.4606" rpy="0 0 0"/>
+  <parent link="UR_upper_arm_1"/>
+  <child link="ur_link_9_1"/>
+</joint>
+
+</robot>
+
+

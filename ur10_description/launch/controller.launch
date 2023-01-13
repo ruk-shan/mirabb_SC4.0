@@ -1,0 +1,9 @@
+<launch>
+
+<rosparam file="$(find ur10_description)/launch/controller.yaml" command="load"/>
+<node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="ur10" args="urJ_01_position_controller urJ_02_position_controller urJ_03_position_controller urJ_04_position_controller urJ_05_position_controller urJ_06_position_controller joint_state_controller "/>
+<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
+  <remap from="/joint_states" to="/ur10/joint_states"/>
+</node>
+
+</launch>

@@ -1,0 +1,146 @@
+<?xml version="1.0" ?>
+<robot name="hpl_uncasing" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find hpl_uncasing_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find hpl_uncasing_description)/urdf/hpl_uncasing.trans" />
+<xacro:include filename="$(find hpl_uncasing_description)/urdf/hpl_uncasing.gazebo" />
+<xacro:include filename="$(find ur10_description)/urdf/ur10.xacro" />
+
+<link name="base_link">
+  <inertial>
+    <origin xyz="0.030787351915591663 0.004258364573635775 0.007349626383698915" rpy="0 0 0"/>
+    <mass value="6.16537558266997"/>
+    <inertia ixx="3.85336" iyy="3.85336" izz="7.706719" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://hpl_uncasing_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="steel_satin"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://hpl_uncasing_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Conveyor_1">
+  <inertial>
+    <origin xyz="0.7247430950259788 0.9136687885831127 0.13445869917795977" rpy="0 0 0"/>
+    <mass value="617.1457047125507"/>
+    <inertia ixx="40.797476" iyy="295.368741" izz="331.909703" ixy="-21.554091" iyz="0.015174" ixz="-0.266129"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.679937 1.209608 -0.4674" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://hpl_uncasing_description/meshes/Conveyor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="opaque100100100_1_1"/>
+  </visual>
+  <collision>
+    <origin xyz="0.679937 1.209608 -0.4674" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://hpl_uncasing_description/meshes/Conveyor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Bin_1">
+  <inertial>
+    <origin xyz="1.4373634305009375e-07 -4.863878171335045e-07 0.30141956361314937" rpy="0 0 0"/>
+    <mass value="176.52294952673597"/>
+    <inertia ixx="20.676885" iyy="20.676885" izz="21.856891" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.419096 -0.759196 -0.0174" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://hpl_uncasing_description/meshes/Bin_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="opaque100100100_1"/>
+  </visual>
+  <collision>
+    <origin xyz="0.419096 -0.759196 -0.0174" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://hpl_uncasing_description/meshes/Bin_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="base_frame_1">
+  <inertial>
+    <origin xyz="0.06216179457876178 -0.09724307566722377 0.23332406525816776" rpy="0 0 0"/>
+    <mass value="11935.628195264018"/>
+    <inertia ixx="5052.540498" iyy="2756.823957" izz="7337.460072" ixy="-378.216549" iyz="-17.371159" ixz="-8.407412"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.030787 -0.004258 -0.0074" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://hpl_uncasing_description/meshes/base_frame_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="opaque192192255"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.030787 -0.004258 -0.0074" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://hpl_uncasing_description/meshes/base_frame_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="letter_frame_1">
+  <inertial>
+    <origin xyz="0.806917344894982 0.3088047158670716 -0.005050373616048931" rpy="0 0 0"/>
+    <mass value="46.05192388352879"/>
+    <inertia ixx="0.616127" iyy="9.277692" izz="9.893067" ixy="-0.735517" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.679937 1.209608 -0.4674" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://hpl_uncasing_description/meshes/letter_frame_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="steel_satin"/>
+  </visual>
+  <collision>
+    <origin xyz="0.679937 1.209608 -0.4674" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://hpl_uncasing_description/meshes/letter_frame_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="Robot_to_base_joint" type="fixed">
+  <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+  <parent link="base_frame_1"/>
+  <child link="ur_link_0"/>
+</joint>
+
+<joint name="Rigid77" type="fixed">
+  <!-- <origin xyz="-0.710724 -1.213866 0.46" rpy="0 0 0"/> -->
+  <origin xyz="-0.710724 -1.213866 0.45999" rpy="0 0 0"/>
+  <parent link="base_frame_1"/>
+  <child link="letter_frame_1"/>
+</joint>
+
+<joint name="Rigid83" type="fixed">
+  <origin xyz="-0.710724 -1.213866 0.46" rpy="0 0 0"/>
+  <parent link="base_frame_1"/>
+  <child link="Conveyor_1"/>
+</joint>
+
+<joint name="Rigid75" type="fixed">
+  <origin xyz="-0.449883 0.754938 0.01" rpy="0 0 0"/>
+  <parent link="base_frame_1"/>
+  <child link="Bin_1"/>
+</joint>
+
+<joint name="base_rev" type="continuous">
+  <origin xyz="0.030787 0.004258 0.0074" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="base_frame_1"/>
+  <axis xyz="-0.0 0.0 1.0"/>
+</joint>
+
+</robot>

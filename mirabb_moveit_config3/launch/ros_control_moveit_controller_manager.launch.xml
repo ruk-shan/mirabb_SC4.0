@@ -1,8 +1,0 @@
-<launch>
-	<!-- Define MoveIt controller manager plugin -->
-	<param name="moveit_controller_manager" value="moveit_ros_control_interface::MoveItControllerManager" />
-
-	<!-- loads controller list to the param server -->
-	<rosparam file="$(find mirabb_moveit_config3)/config/new_ros_controllers.yaml"/>
-
-</launch>

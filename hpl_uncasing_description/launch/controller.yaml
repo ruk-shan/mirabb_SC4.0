@@ -1,0 +1,35 @@
+hpl_uncasing_controller:
+  # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50
+
+  # Position Controllers --------------------------------------
+  urJ_01_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: urJ_01
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  urJ_02_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: urJ_02
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  urJ_03_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: urJ_03
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  urJ_04_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: urJ_04
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  urJ_05_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: urJ_05
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  utJ_06_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: utJ_06
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  base_rev_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: base_rev
+    pid: {p: 100.0, i: 0.01, d: 10.0}
