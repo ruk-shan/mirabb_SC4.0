@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<robot name="loadcell_sim" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+<material name="silver_default">
+  <color rgba="0.700 0.700 0.700 1.000"/>
+</material>
+<material name="powder_coat_rough_blue">
+  <color rgba="0.18823529411764706 0.23137254901960785 0.5882352941176471 0.0"/>
+</material>
+<material name="powder_coat_rough_green">
+  <color rgba="0.26666666666666666 0.5882352941176471 0.2823529411764706 0.0"/>
+</material>
+<material name="steel_satin">
+  <color rgba="0.6274509803921569 0.6274509803921569 0.6274509803921569 1.0"/>
+</material>
+
+</robot>

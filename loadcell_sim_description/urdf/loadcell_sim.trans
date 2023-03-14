@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<robot name="loadcell_sim" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+<transmission name="Slider5_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Slider5">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Slider5_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+</robot>

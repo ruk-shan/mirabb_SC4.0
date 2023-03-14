@@ -1,0 +1,165 @@
+<?xml version="1.0" ?>
+<robot name="loadcell_sim" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find loadcell_sim_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find loadcell_sim_description)/urdf/loadcell_sim.trans" />
+<xacro:include filename="$(find loadcell_sim_description)/urdf/loadcell_sim.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="4.103019280728379e-05 -1.802265709957231e-05 0.4719023221708341" rpy="0 0 0"/>
+    <mass value="265.191721150617"/>
+    <inertia ixx="47.111072" iyy="86.63584" izz="130.800671" ixy="-0.013041" iyz="0.000124" ixz="-0.000278"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://loadcell_sim_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="powder_coat_rough_green"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://loadcell_sim_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="load_cell_A_1">
+  <inertial>
+    <origin xyz="0.0 1.1102230246251565e-16 -0.05000000000000002" rpy="0 0 0"/>
+    <mass value="1.9624999999999946"/>
+    <inertia ixx="0.002044" iyy="0.002044" izz="0.000818" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.475 0.225 -0.1" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://loadcell_sim_description/meshes/load_cell_A_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="powder_coat_rough_blue"/>
+  </visual>
+  <collision>
+    <origin xyz="0.475 0.225 -0.1" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://loadcell_sim_description/meshes/load_cell_A_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="load_cell_B_1">
+  <inertial>
+    <origin xyz="0.0 0.0 -0.05" rpy="0 0 0"/>
+    <mass value="1.9625"/>
+    <inertia ixx="0.002044" iyy="0.002044" izz="0.000818" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.475 -0.225 -0.1" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://loadcell_sim_description/meshes/load_cell_B_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="powder_coat_rough_blue"/>
+  </visual>
+  <collision>
+    <origin xyz="0.475 -0.225 -0.1" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://loadcell_sim_description/meshes/load_cell_B_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="load_cell_C_1">
+  <inertial>
+    <origin xyz="0.0 0.0 -0.049999999999999996" rpy="0 0 0"/>
+    <mass value="1.9625000000000012"/>
+    <inertia ixx="0.002044" iyy="0.002044" izz="0.000818" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.475 -0.225 -0.1" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://loadcell_sim_description/meshes/load_cell_C_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="powder_coat_rough_blue"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.475 -0.225 -0.1" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://loadcell_sim_description/meshes/load_cell_C_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="load_cell_D_1">
+  <inertial>
+    <origin xyz="-5.551115123125783e-17 2.7755575615628914e-17 -0.049999999999999996" rpy="0 0 0"/>
+    <mass value="1.9625000000000026"/>
+    <inertia ixx="0.002044" iyy="0.002044" izz="0.000818" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.475 0.225 -0.1" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://loadcell_sim_description/meshes/load_cell_D_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="powder_coat_rough_blue"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.475 0.225 -0.1" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://loadcell_sim_description/meshes/load_cell_D_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="load_1">
+  <inertial>
+    <origin xyz="1.8189894035458566e-17 0.0 0.09999999999999998" rpy="0 0 0"/>
+    <mass value="62.79999999999999"/>
+    <inertia ixx="0.418667" iyy="0.418667" izz="0.418667" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.0 0.0 -0.5" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://loadcell_sim_description/meshes/load_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="steel_satin"/>
+  </visual>
+  <collision>
+    <origin xyz="0.0 0.0 -0.5" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://loadcell_sim_description/meshes/load_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="Rigid1" type="fixed">
+  <origin xyz="-0.475 -0.225 0.1" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="load_cell_A_1"/>
+</joint>
+
+<joint name="Rigid2" type="fixed">
+  <origin xyz="-0.475 0.225 0.1" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="load_cell_B_1"/>
+</joint>
+
+<joint name="Rigid3" type="fixed">
+  <origin xyz="0.475 0.225 0.1" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="load_cell_C_1"/>
+</joint>
+
+<joint name="Rigid4" type="fixed">
+  <origin xyz="0.475 -0.225 0.1" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="load_cell_D_1"/>
+</joint>
+
+<joint name="Slider5" type="prismatic">
+  <origin xyz="0.0 0.0 0.5" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="load_1"/>
+  <axis xyz="1.0 0.0 0.0"/>
+  <limit upper="0.0" lower="0.0" effort="100" velocity="100"/>
+</joint>
+
+</robot>
